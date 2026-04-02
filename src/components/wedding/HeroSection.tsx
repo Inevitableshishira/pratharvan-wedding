@@ -7,41 +7,44 @@ import GoldenParticles from "./GoldenParticles";
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16 md:py-24"
-      style={{ background: "hsl(270 30% 12%)", zIndex: 0 }}
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 md:py-24"
+      style={{ background: "hsl(270 30% 12%)" }}
     >
-      {/* ── Toran garland at top ─────────────────────────────────────── */}
-      <motion.div
-        className="absolute top-0 inset-x-0 flex justify-center items-start pointer-events-none"
-        style={{ zIndex: 5 }}
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-      >
-        {Array.from({ length: 14 }).map((_, i) => {
-          const droop = Math.sin((i / 13) * Math.PI) * 18;
-          const isCenter = Math.abs(i - 6) < 3;
-          const flower = ["🌺", "🌸", "🌼", "🌺"][i % 4];
-          return (
-            <motion.div key={i} className="flex flex-col items-center"
-              style={{ paddingTop: `${droop}px`, willChange: "transform" }}
-              animate={{ y: [0, isCenter ? -2 : -1, 0] }}
-              transition={{ duration: 3 + (i % 2) * 0.5, delay: i * 0.08, repeat: Infinity, ease: "easeInOut" }}>
-              <span style={{ fontSize: isCenter ? "16px" : "11px", opacity: 0.6 }}>{flower}</span>
-            </motion.div>
-          );
-        })}
-      </motion.div>
+      {/* ── Background Elements ─────────────────────────────────────── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Toran garland at top */}
+        <motion.div
+          className="absolute top-0 inset-x-0 flex justify-center items-start pointer-events-none"
+          style={{ zIndex: 1 }}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+        >
+          {Array.from({ length: 14 }).map((_, i) => {
+            const droop = Math.sin((i / 13) * Math.PI) * 18;
+            const isCenter = Math.abs(i - 6) < 3;
+            const flower = ["🌺", "🌸", "🌼", "🌺"][i % 4];
+            return (
+              <motion.div key={i} className="flex flex-col items-center"
+                style={{ paddingTop: `${droop}px`, willChange: "transform" }}
+                animate={{ y: [0, isCenter ? -2 : -1, 0] }}
+                transition={{ duration: 3 + (i % 2) * 0.5, delay: i * 0.08, repeat: Infinity, ease: "easeInOut" }}>
+                <span style={{ fontSize: isCenter ? "16px" : "11px", opacity: 0.6 }}>{flower}</span>
+              </motion.div>
+            );
+          })}
+        </motion.div>
 
-      {/* ── Corner flowers (one per side only) ──────────────────────── */}
-      <motion.img src={flowersImg} alt="" aria-hidden
-        className="absolute top-0 right-0 w-32 md:w-48 opacity-30 rotate-45 pointer-events-none"
-        initial={{ opacity: 0, x: 40 }} animate={{ opacity: 0.3, x: 0 }}
-        transition={{ duration: 1.5 }} />
-      <motion.img src={flowersImg} alt="" aria-hidden
-        className="absolute bottom-0 left-0 w-32 md:w-48 opacity-30 -rotate-45 scale-x-[-1] pointer-events-none"
-        initial={{ opacity: 0, x: -40 }} animate={{ opacity: 0.3, x: 0 }}
-        transition={{ duration: 1.5 }} />
+        {/* Corner flowers */}
+        <motion.img src={flowersImg} alt="" aria-hidden
+          className="absolute top-0 right-0 w-32 md:w-48 opacity-30 rotate-45 pointer-events-none"
+          initial={{ opacity: 0, x: 40 }} animate={{ opacity: 0.3, x: 0 }}
+          transition={{ duration: 1.5 }} />
+        <motion.img src={flowersImg} alt="" aria-hidden
+          className="absolute bottom-0 left-0 w-32 md:w-48 opacity-30 -rotate-45 scale-x-[-1] pointer-events-none"
+          initial={{ opacity: 0, x: -40 }} animate={{ opacity: 0.3, x: 0 }}
+          transition={{ duration: 1.5 }} />
+      </div>
 
       {/* ── Wedding Postage Header ──────────────────────────────────── */}
       <motion.img src={weddingPostageImg} alt="Wedding Postage" aria-hidden
@@ -54,7 +57,6 @@ const HeroSection = () => {
 
       {/* ── HERO couple names with Temple background ────────────────── */}
       <div className="relative mt-6 md:mt-10 w-full max-w-2xl">
-
         {/* Original Temple image behind names */}
         <motion.div
           className="absolute inset-0 rounded-lg overflow-hidden pointer-events-none"
@@ -66,7 +68,6 @@ const HeroSection = () => {
           <img src={templeImg} alt="" aria-hidden
             className="w-full h-full object-contain"
             style={{ filter: "brightness(0.4) contrast(1.2)" }} />
-          {/* Vignette to blend edges */}
           <div className="absolute inset-0"
             style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 20%, hsl(270 30% 12% / 0.9) 100%)" }} />
         </motion.div>
@@ -92,7 +93,7 @@ const HeroSection = () => {
           <motion.h1
             className="font-serif leading-tight"
             style={{
-              fontSize: "clamp(2.5rem, 10vw, 6.5rem)", // Slightly smaller for longer name
+              fontSize: "clamp(2.5rem, 10vw, 6.5rem)",
               background: "linear-gradient(135deg, hsl(45 80% 70%), hsl(40 60% 90%), hsl(45 70% 55%))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",

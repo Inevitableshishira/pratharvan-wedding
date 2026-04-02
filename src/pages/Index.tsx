@@ -29,10 +29,10 @@ const PageReveal = ({
 const Index = () => {
   return (
     <main className="relative overflow-x-hidden">
-      <FloatingLanterns />
-
       {/* HERO — no reveal wrapper, loads immediately */}
       <HeroSection />
+
+      <FloatingLanterns />
 
       {/* 🚗 One vintage car — dramatic entrance between hero and bride/groom */}
       <CarTransition
