@@ -21,7 +21,7 @@ const SocialSection = () => {
         Share your moments with us
       </motion.p>
       <motion.a
-        href="https://instagram.com/explore/tags/pratharvan"
+        href="https://instagram.com/kavyawedsarjun"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-3 px-6 py-3 rounded-full border font-sans text-sm tracking-wider transition-all duration-300 text-gold gold-glow-hover"
@@ -33,7 +33,7 @@ const SocialSection = () => {
         viewport={{ once: true }}
       >
         <Instagram size={20} />
-        @PRATHARVAN
+        @kavyawedsarjun
       </motion.a>
     </section>
   );

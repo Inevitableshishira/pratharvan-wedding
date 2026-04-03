@@ -4,6 +4,7 @@ import BrideGroomSection from "@/components/wedding/BrideGroomSection";
 import EventsSection from "@/components/wedding/EventsSection";
 import CountdownSection from "@/components/wedding/CountdownSection";
 import FloatingLanterns from "@/components/wedding/FloatingLanterns";
+import CarTransition from "@/components/wedding/CarTransition";
 import TraditionalDivider from "@/components/wedding/TraditionalDivider";
 import FooterSection from "@/components/wedding/FooterSection";
 
@@ -16,10 +17,10 @@ const PageReveal = ({
   delay?: number;
 }) => (
   <motion.div
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, delay, ease: "easeOut" }}
+    initial={{ opacity: 0, y: 32, filter: "blur(4px)" }}
+    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    viewport={{ once: true, margin: "-60px" }}
+    transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
   >
     {children}
   </motion.div>
@@ -28,9 +29,18 @@ const PageReveal = ({
 const Index = () => {
   return (
     <main className="relative overflow-x-hidden">
+      <FloatingLanterns />
+
+      {/* HERO — no reveal wrapper, loads immediately */}
       <HeroSection />
 
-      <FloatingLanterns />
+      {/* 🚗 One vintage car — dramatic entrance between hero and bride/groom */}
+      <CarTransition
+        carType="black"
+        flip={true}
+        fromColor="hsl(270 30% 15%)"
+        toColor="hsl(270 25% 18%)"
+      />
 
       {/* BRIDE & GROOM */}
       <PageReveal>
