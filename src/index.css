@@ -169,4 +169,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
 }
