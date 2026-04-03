@@ -39,7 +39,6 @@ const MarigoldDivider = ({
         zIndex: 40,
         isolation: "isolate",
         overflow: "hidden",
-        pointerEvents: "none",
       }}
     >
       {/* Top fade */}
@@ -107,7 +106,6 @@ const DiyaDivider = ({
         zIndex: 40,
         isolation: "isolate",
         overflow: "hidden",
-        pointerEvents: "none",
       }}
     >
       <div className="absolute inset-x-0 top-0 h-12 pointer-events-none"

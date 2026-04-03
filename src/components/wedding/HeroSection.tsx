@@ -15,18 +15,19 @@ const HeroSection = () => {
         {/* Toran garland at top */}
         <motion.div
           className="absolute top-0 inset-x-0 flex justify-center items-start pointer-events-none"
-          style={{ zIndex: 1, willChange: "transform, opacity" }}
-          initial={{ opacity: 0, y: -20 }}
+          style={{ zIndex: 1 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2 }}
         >
           {Array.from({ length: 8 }).map((_, i) => {
             const isCenter = Math.abs(i - 4) < 2;
             const flower = ["🌺", "🌸", "🌼", "🌺"][i % 4];
             return (
               <motion.div key={i} className="px-2"
+                style={{ willChange: "transform" }}
                 animate={{ y: [0, -2, 0] }}
-                transition={{ duration: 4, delay: i * 0.1, repeat: Infinity, ease: "easeInOut" }}>
+                transition={{ duration: 4, delay: i * 0.2, repeat: Infinity, ease: "easeInOut" }}>
                 <span style={{ fontSize: isCenter ? "16px" : "11px", opacity: 0.6 }}>{flower}</span>
               </motion.div>
             );
@@ -47,14 +48,14 @@ const HeroSection = () => {
       {/* ── Wedding Postage Header ──────────────────────────────────── */}
       <motion.img src={weddingPostageImg} alt="Wedding Postage" aria-hidden
         className="w-40 md:w-52 relative z-10"
-        style={{ opacity: 0.9, filter: "drop-shadow(0 0 20px hsl(45 70% 35% / 0.3))", willChange: "transform" }}
+        style={{ opacity: 0.9, filter: "drop-shadow(0 0 20px hsl(45 70% 35% / 0.3))" }}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 0.9, scale: 1 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1.0 }}
       />
 
       {/* ── HERO couple names with Temple background ────────────────── */}
-      <div className="relative mt-6 md:mt-10 w-full max-w-2xl pointer-events-none">
+      <div className="relative mt-6 md:mt-10 w-full max-w-2xl">
         {/* Original Temple image behind names */}
         <motion.div
           className="absolute inset-0 rounded-lg overflow-hidden pointer-events-none"
@@ -156,14 +157,14 @@ const HeroSection = () => {
       </motion.div>
 
       {/* ── Blessings ────────────────────────────────────────────────── */}
-      <motion.div className="text-center mt-8 md:mt-12 max-w-xl relative z-10"
-        initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1.5 }}>
+      <motion.div className="text-center mt-10 md:mt-14 max-w-xl relative z-10"
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 2.4 }}>
         <p className="font-sans text-[10px] md:text-xs tracking-[0.3em] uppercase opacity-55"
           style={{ color: "hsl(45 60% 75%)" }}>
           With the blessings of
         </p>
-        <p className="font-serif text-sm md:text-base text-cream leading-relaxed mt-2 opacity-80">
+        <p className="font-serif text-sm md:text-base text-cream leading-relaxed mt-3 opacity-80">
           Smt. Ramamani &amp; Shri Rajegowda
         </p>
         <p className="font-serif text-sm md:text-base text-cream leading-relaxed mt-1 opacity-80">
