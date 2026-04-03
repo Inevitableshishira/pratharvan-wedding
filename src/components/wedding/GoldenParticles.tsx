@@ -81,23 +81,19 @@ const GoldenParticles = () => {
           p.opacity = Math.max(p.opacity - p.opacitySpeed * 1.2, 0);
         }
 
-        const twinkle = 0.9 + Math.sin(p.life * 0.12) * 0.1;
-        const alpha = p.opacity * twinkle;
-        
+        const alpha = p.opacity * (0.9 + Math.sin(p.life * 0.12) * 0.1);
         if (alpha <= 0.01) continue;
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        
-        // Only use expensive gradients for large particles (>2.0px)
+        // Simpler glow: just two circles if large, otherwise one
         if (p.radius > 2.0) {
-          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 2);
-          grad.addColorStop(0, `hsla(${p.hue}, 90%, 85%, ${alpha})`);
-          grad.addColorStop(1, `hsla(${p.hue}, 70%, 45%, 0)`);
-          ctx.fillStyle = grad;
-        } else {
-          ctx.fillStyle = `hsla(${p.hue}, 85%, 65%, ${alpha})`;
+          ctx.fillStyle = `hsla(${p.hue}, 70%, 45%, ${alpha * 0.3})`;
+          ctx.arc(p.x, p.y, p.radius * 1.8, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.beginPath();
         }
+        ctx.fillStyle = `hsla(${p.hue}, 90%, 85%, ${alpha})`;
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
       }
 

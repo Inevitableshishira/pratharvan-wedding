@@ -58,7 +58,7 @@ const CarTransition = ({
   return (
     <div
       ref={ref}
-      className="relative w-full"
+      className="relative w-full pointer-events-none"
       style={{
         height: "280px", // Increased height
         background: `linear-gradient(180deg, ${fromColor}, ${toColor})`,

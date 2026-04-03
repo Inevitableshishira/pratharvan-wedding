@@ -170,3 +170,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}

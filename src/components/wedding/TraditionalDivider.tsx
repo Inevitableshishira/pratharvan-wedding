@@ -32,7 +32,7 @@ const MarigoldDivider = ({
   return (
     <div
       ref={ref}
-      className="relative"
+      className="relative pointer-events-none"
       style={{
         height: "160px",
         background: `linear-gradient(180deg, ${fromColor}, ${toColor})`,
@@ -99,7 +99,7 @@ const DiyaDivider = ({
   return (
     <div
       ref={ref}
-      className="relative"
+      className="relative pointer-events-none"
       style={{
         height: "160px",
         background: `linear-gradient(180deg, ${fromColor}, ${toColor})`,
@@ -173,7 +173,7 @@ const GopuramDivider = ({
   return (
     <div
       ref={ref}
-      className="relative"
+      className="relative pointer-events-none"
       style={{
         height: "160px",
         background: `linear-gradient(180deg, ${fromColor}, ${toColor})`,
