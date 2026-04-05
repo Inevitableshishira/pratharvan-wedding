@@ -25,14 +25,14 @@ const CarTransition = ({
   // Car drives Right-to-Left (flip=true)
   // X=110vw (Right side) at scroll start (0)
   // X=-110vw (Left side) at scroll end (1)
-  // Truly responsive travel: from just off-screen one side to just off-screen the other side
-  // Truly responsive travel: from just off-screen one side to just off-screen the other side
+  // Center-anchored travel path: moves from one side of the viewport's center to the other.
+  // This approach is perfectly responsive for all devices (Mobile to Ultra-wide).
   const carX = useTransform(
     scrollYProgress,
-    [0, 1],
+    [0.1, 0.9], // Start/End slightly tighter for better visibility
     flip 
-      ? ["100vw", "-250px"] // Start right, cross to left
-      : ["-250px", "100vw"] // Start left, cross to right
+      ? ["70vw", "-70vw"] // Start right relative to center, cross to left
+      : ["-70vw", "70vw"] // Start left relative to center, cross to right
   );
   
   const carOpacity = useTransform(
@@ -87,7 +87,7 @@ const CarTransition = ({
 
         {/* Car container */}
         <motion.div
-          className="absolute flex"
+          className="absolute"
           style={{
             x: carX,
             y: carY,
@@ -96,7 +96,8 @@ const CarTransition = ({
             scale: carScale,
             top: "20%",
             zIndex: 10,
-            left: 0, // Anchor to absolute left for better multi-device handling
+            left: "50%", // Anchor to exact horizontal center
+            translateX: "-50%", // Keep the car itself centered relative to its position
           }}
         >
           <div className="relative">
