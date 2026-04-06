@@ -61,23 +61,6 @@ const HeroSection = () => {
       {/* ── HERO couple names with Temple background ────────────────── */}
       <div className="relative mt-6 md:mt-10 w-full max-w-2xl">
 
-        <motion.div
-          className="absolute inset-0 rounded-lg overflow-hidden pointer-events-none"
-          style={{ zIndex: 0, margin: "-20px -40px", willChange: "transform, opacity" }}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <img src={templeImg} alt="" aria-hidden
-            className="w-full h-full object-contain"
-            style={{ filter: "brightness(0.4) contrast(1.2)" }}
-            loading="eager"
-            decoding="async" 
-          />
-          <div className="absolute inset-0"
-            style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 20%, hsl(0 0% 100% / 0.9) 100%)" }} />
-        </motion.div>
-
         {/* Golden particles behind text */}
         <div className="absolute -inset-8" style={{ zIndex: 1 }}>
           <GoldenParticles />
