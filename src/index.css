@@ -79,6 +79,25 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Fixed Background Image Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/landscape-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
