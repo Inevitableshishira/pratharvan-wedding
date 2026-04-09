@@ -11,30 +11,32 @@ const events = [
 
 const EventsSection = () => {
   return (
-    <section className="relative py-20 md:py-32 px-4 overflow-hidden" style={{ zIndex: 0 }}>
+    <section className="relative py-20 md:py-32 px-4 overflow-hidden flex flex-col items-center" style={{ zIndex: 0 }}>
       {/* Spinning mandala watermarks */}
       <motion.img src={mandalaImg} alt="" aria-hidden
         className="absolute -top-16 -right-16 w-56 opacity-[0.05] pointer-events-none"
+        style={{ willChange: "transform" }}
         animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} />
       <motion.img src={mandalaImg} alt="" aria-hidden
         className="absolute -bottom-16 -left-16 w-44 opacity-[0.04] pointer-events-none"
+        style={{ willChange: "transform" }}
         animate={{ rotate: -360 }} transition={{ duration: 50, repeat: Infinity, ease: "linear" }} />
       {/* Om watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
         <svg width="320" height="320" viewBox="0 0 100 100" aria-hidden>
-          <text x="50" y="72" fontSize="72" textAnchor="middle" fill="hsl(45 70% 55%)" fontFamily="serif" fontWeight="bold">ॐ</text>
+          <text x="50" y="72" fontSize="72" textAnchor="middle" fill="hsl(45 70% 55%)" fontFamily="serif" fontWeight="bold">ಓಂ</text>
         </svg>
       </div>
       {/* Om watermark */}
 
-      <div className="relative z-10">
-        <motion.p className="font-sans text-[10px] tracking-[0.5em] uppercase text-center mb-3"
-          style={{ color: "hsl(45 70% 55% / 0.5)" }}
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center">
+        <motion.p className="font-sans text-[10px] tracking-[0.5em] uppercase text-center mb-3 font-bold text-shadow-premium"
+          style={{ color: "hsl(var(--cream))" }}
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
           ✦ &nbsp; ಪವಿತ್ರ ಉತ್ಸವ &nbsp; ✦
         </motion.p>
         <motion.h2
-          className="font-serif text-5xl md:text-7xl text-center gold-shimmer mb-6"
+          className="font-feminine text-6xl md:text-8xl text-center gold-shimmer mb-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -42,7 +44,8 @@ const EventsSection = () => {
           The Celebrations
         </motion.h2>
         <motion.p
-          className="font-sans text-sm text-center text-white/90 mb-16 tracking-widest uppercase"
+          className="font-sans text-sm text-center text-cream mb-16 tracking-widest uppercase font-bold text-shadow-premium"
+          style={{ opacity: 0.95 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -67,7 +70,8 @@ const EventsSection = () => {
             <motion.img 
               src={mandalaImg} 
               alt="" 
-              className="absolute top-1/2 left-1/2 w-[300px] md:w-[500px] opacity-[0.04] pointer-events-none -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 w-[350px] md:w-[600px] opacity-[0.1] pointer-events-none -translate-x-1/2 -translate-y-1/2"
+              style={{ willChange: "transform" }}
               animate={{ rotate: 360 }} 
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }} 
             />
@@ -75,9 +79,9 @@ const EventsSection = () => {
               animate={{ opacity: [0.2, 0.5, 0.2] }}
               transition={{ duration: 3, repeat: Infinity }} />
 
-            <p className="font-sans text-[10px] tracking-[0.4em] uppercase opacity-40 mb-4">Venue &amp; Location</p>
+            <p className="font-sans text-[10px] tracking-[0.4em] uppercase opacity-90 mb-4 text-cream font-bold text-shadow-premium">Venue &amp; Location</p>
             <h4 className="font-serif text-3xl md:text-5xl text-gold mb-3">Khandya Planters' Club</h4>
-            <p className="font-sans text-xs text-mint/60 tracking-[0.2em] uppercase mb-10">
+            <p className="font-sans text-xs text-cream tracking-[0.2em] uppercase mb-10 opacity-90 font-bold text-shadow-premium">
                Sangameshwarpet, Chikkamagaluru
             </p>
 

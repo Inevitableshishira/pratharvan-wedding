@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import mandalaImg from "@/assets/mandala-gold.png";
 import flowersImg from "@/assets/flowers.png";
+import idolImg from "@/assets/idol.png";
 
 const WEDDING_DATE = new Date("2026-05-08T09:30:00+05:30").getTime();
 
@@ -63,14 +64,19 @@ const CountdownSection = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.025]">
         <svg width="280" height="280" viewBox="0 0 100 100" aria-hidden>
           <text x="50" y="72" fontSize="72" textAnchor="middle"
-            fill="hsl(45 70% 55%)" fontFamily="serif" fontWeight="bold">ॐ</text>
+            fill="hsl(45 70% 55%)" fontFamily="serif" fontWeight="bold">ಓಂ</text>
         </svg>
       </div>
 
       <div className="relative z-10">
+        {/* Idol Placeholder / Image */}
+        <div className="flex justify-center mb-6">
+          <img src={idolImg} alt="Sacred Idol" className="max-w-[120px] md:max-w-[160px] h-auto drop-shadow-md mb-2" />
+        </div>
+
         {/* Title */}
-        <motion.p className="font-sans text-[10px] tracking-[0.5em] uppercase text-center mb-2"
-          style={{ color: "hsl(45 70% 55% / 0.5)" }}
+        <motion.p className="font-sans text-[12px] md:text-sm tracking-[0.5em] uppercase text-center mb-2 text-shadow-premium font-bold"
+          style={{ color: "hsl(var(--cream))" }}
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
           ✦ &nbsp; The Auspicious Hour &nbsp; ✦
         </motion.p>
@@ -79,11 +85,11 @@ const CountdownSection = () => {
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
           Counting Down
         </motion.h2>
-        <motion.p className="font-serif text-base md:text-lg text-center italic mb-10"
-          style={{ color: "hsl(40 40% 80% / 0.5)" }}
+        <motion.p className="font-serif text-base md:text-lg text-center italic mb-10 text-shadow-premium"
+          style={{ color: "hsl(var(--cream))" }}
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
           transition={{ delay: 0.1 }}>
-          to Muhurtham · 6:30 AM
+          to Muhurtham · 9:30 AM
         </motion.p>
 
         {/* Countdown tiles */}
@@ -98,11 +104,11 @@ const CountdownSection = () => {
 
               {/* Tile */}
               <div
-                className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center relative"
+                className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center relative rounded-md"
                 style={{
-                  background: "linear-gradient(145deg, hsl(270 25% 20%), hsl(270 20% 14%))",
-                  border: "1px solid hsl(45 70% 55% / 0.3)",
-                  boxShadow: "0 0 20px hsl(45 70% 55% / 0.08), inset 0 0 15px hsl(45 70% 55% / 0.04)",
+                  background: "linear-gradient(145deg, hsl(165 40% 30%), hsl(165 40% 20%))",
+                  border: "1px solid hsl(45 70% 55% / 0.4)",
+                  boxShadow: "0 4px 15px hsl(165 40% 20% / 0.4), inset 0 0 15px hsl(45 70% 55% / 0.15)",
                 }}
               >
                 {/* Corner micro-flares */}
@@ -125,8 +131,8 @@ const CountdownSection = () => {
                 </motion.span>
               </div>
 
-              <span className="font-sans text-[10px] tracking-widest uppercase text-lavender"
-                style={{ opacity: 0.6 }}>{u.label}</span>
+              <span className="font-sans text-[11px] md:text-[12px] tracking-widest uppercase text-cream text-shadow-premium font-bold"
+                style={{ opacity: 0.95 }}>{u.label}</span>
             </motion.div>
           ))}
         </div>

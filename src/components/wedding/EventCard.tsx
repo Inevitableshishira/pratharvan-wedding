@@ -39,13 +39,13 @@ const EventCard = ({ title, icon, time, date, venue, index }: EventCardProps) =>
           >
             {icon}
           </motion.div>
-          <h3 className="font-serif text-xl md:text-2xl text-gold font-semibold">{title}</h3>
-          <p className="font-sans text-xs text-cream mt-2 opacity-80">{time}</p>
+          <h3 className="font-serif text-2xl md:text-3xl text-gold font-semibold">{title}</h3>
+          <p className="font-sans text-sm md:text-base text-cream mt-2 opacity-80">{time}</p>
         </div>
       </div>
       <div className="mt-4 text-center pb-2">
-        <p className="font-sans text-sm md:text-base font-bold text-cream tracking-wide">{date}</p>
-        <p className="font-sans text-sm md:text-base font-medium text-gold mt-1">{venue}</p>
+        <p className="font-sans text-base md:text-lg font-bold text-cream tracking-wide text-shadow-premium">{date}</p>
+        <p className="font-sans text-base md:text-lg font-medium text-gold mt-1 text-shadow-premium">{venue}</p>
         <a
           href={`https://maps.google.com/?q=${encodeURIComponent(venue + ", Sangameshwarpet")}`}
           target="_blank"

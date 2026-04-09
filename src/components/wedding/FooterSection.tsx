@@ -19,7 +19,7 @@ const OmSymbol = ({ opacity = 0.06, size = 120 }: { opacity?: number; size?: num
   <svg width={size} height={size} viewBox="0 0 100 100" style={{ opacity }} aria-hidden>
     <text x="50" y="72" fontSize="72" textAnchor="middle"
       fill="hsl(45 70% 55%)" fontFamily="serif" fontWeight="bold">
-      ॐ
+      ಓಂ
     </text>
   </svg>
 );
@@ -62,8 +62,8 @@ const BlessingCard = () => (
       <OmSymbol size={60} opacity={1} />
     </div>
 
-    <p className="font-sans text-[10px] tracking-[0.5em] uppercase text-center mb-4"
-      style={{ color: "hsl(45 70% 55% / 0.5)" }}>
+    <p className="font-sans text-[12px] md:text-sm tracking-[0.5em] uppercase text-center mb-4 text-shadow-premium font-bold"
+      style={{ color: "hsl(var(--cream))" }}>
       ✦ &nbsp; Sacred Blessings &nbsp; ✦
     </p>
 
@@ -73,10 +73,10 @@ const BlessingCard = () => (
       style={{ color: "hsl(45 70% 65%)" }}
       animate={{ opacity: [0.7, 1, 0.7] }}
       transition={{ duration: 5, repeat: Infinity }}>
-      "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थ साधिके”
+      "ಸರ್ವಮಂಗಲ ಮಾಂಗಲ್ಯೇ ಶಿವೇ ಸರ್ವಾರ್ಥ ಸಾಧಕೇ"
     </motion.p>
-    <p className="font-sans text-[10px] tracking-widest text-center mb-6"
-      style={{ color: "hsl(45 60% 65% / 0.45)" }}>
+    <p className="font-sans text-[11px] md:text-[12px] tracking-widest text-center mb-6"
+      style={{ color: "hsl(45 60% 70%)" }}>
       May all that is auspicious bless this union
     </p>
 
@@ -99,31 +99,34 @@ const BlessingCard = () => (
 
     {/* Family names */}
     <div className="mt-5 pt-4" style={{ borderTop: "1px solid hsl(45 70% 55% / 0.12)" }}>
-      <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-center mb-2"
-        style={{ color: "hsl(45 70% 55% / 0.4) font-bold" }}>With blessings of</p>
+      <p className="font-sans text-[12px] md:text-sm tracking-[0.4em] uppercase text-center mb-2 font-bold text-shadow-premium"
+        style={{ color: "hsl(var(--cream))" }}>With blessings of</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
         <div>
-          <p className="font-serif text-[11px] text-center" style={{ color: "hsl(45 70% 55% / 0.85)" }}>
+          <p className="font-serif text-[13px] md:text-[14px] text-center" style={{ color: "hsl(var(--gold))" }}>
             Smt. Ramamani &amp; Shri Rajegowda
           </p>
-          <p className="font-sans text-[9px] text-center opacity-40 mt-1 uppercase tracking-widest text-mint">
+          <p className="font-sans text-[11px] text-center mt-1 uppercase tracking-widest text-cream font-bold text-shadow-premium"
+             style={{ opacity: 0.9 }}>
             Chittemakki &amp; Karagunda Families
           </p>
         </div>
         <div>
-          <p className="font-serif text-[11px] text-center" style={{ color: "hsl(45 70% 55% / 0.85)" }}>
+          <p className="font-serif text-[13px] md:text-[14px] text-center" style={{ color: "hsl(var(--gold))" }}>
             Smt. Lekha &amp; Shri Jagadeesh Hegde
           </p>
-          <p className="font-sans text-[9px] text-center opacity-40 mt-1 uppercase tracking-widest text-mint">
+          <p className="font-sans text-[11px] text-center mt-1 uppercase tracking-widest text-cream font-bold text-shadow-premium"
+             style={{ opacity: 0.9 }}>
             Kalkuli &amp; Nandipura Families
           </p>
         </div>
       </div>
 
-      <div className="mt-6 pt-4 border-t border-gold/5">
-        <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-center mb-3 opacity-40">With Best Compliments From</p>
-        <p className="font-serif text-[10px] leading-relaxed text-center px-4" style={{ color: "hsl(40 35% 78% / 0.65)" }}>
+      <div className="mt-6 pt-4 border-t border-gold/5 flex flex-col items-center">
+        <p className="font-sans text-[11px] md:text-[12px] tracking-[0.3em] uppercase text-center mb-3 text-cream font-bold text-shadow-premium" style={{ opacity: 0.85 }}>With Best Compliments From</p>
+        <p className="font-serif text-[12px] md:text-[13px] leading-relaxed text-center px-4 max-w-[320px] md:max-w-none text-cream/90 text-shadow-premium" 
+           style={{ fontStyle: "italic" }}>
           Prajwal, Venkatesh, Saraswathi, Anushruthi, Arjun, Ahana, Ananya, Rakshith, Prema Nagesh, and children.
         </p>
       </div>
@@ -185,20 +188,20 @@ const FooterSection = () => {
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 1 }}>
 
-          <motion.p className="font-sans text-[10px] tracking-[0.6em] uppercase mb-4"
-            style={{ color: "hsl(45 70% 55% / 0.5)" }}
-            animate={{ opacity: [0.4, 0.7, 0.4] }}
+          <motion.p className="font-sans text-[10px] tracking-[0.6em] uppercase mb-4 text-shadow-premium font-bold"
+            style={{ color: "hsl(var(--cream))" }}
+            animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 4, repeat: Infinity }}>
-            ✦ &nbsp; शुभ विवाह &nbsp; ✦
+            ✦ &nbsp; ಶುಭ ವಿವಾಹ &nbsp; ✦
           </motion.p>
 
           <h2 className="font-serif text-5xl md:text-7xl gold-shimmer font-light italic leading-tight">
             Pratheeksha &amp; Atharvan
           </h2>
-          <p className="font-serif text-xl md:text-2xl mt-3" style={{ color: "hsl(40 40% 85% / 0.7)" }}>
+          <p className="font-serif text-xl md:text-2xl mt-3 text-shadow-premium" style={{ color: "hsl(var(--cream))" }}>
             Friday, May 8, 2026
           </p>
-          <p className="font-sans text-xs tracking-[0.3em] uppercase mt-2 px-4" style={{ color: "hsl(160 40% 65% / 0.7)" }}>
+          <p className="font-sans text-xs tracking-[0.3em] uppercase mt-2 px-4 text-shadow-premium font-bold" style={{ color: "hsl(var(--cream))" }}>
             Khandya Planters' Club · Chikkamagaluru
           </p>
 
@@ -220,8 +223,8 @@ const FooterSection = () => {
             <div className="absolute top-3 left-3 opacity-[0.05]">
               <OmSymbol size={50} opacity={1} />
             </div>
-            <p className="font-sans text-[10px] tracking-[0.5em] uppercase text-center mb-4"
-              style={{ color: "hsl(45 70% 55% / 0.5)" }}>✦ &nbsp; The Venue &nbsp; ✦</p>
+            <p className="font-sans text-[12px] md:text-sm tracking-[0.5em] uppercase text-center mb-4 text-shadow-premium font-bold"
+              style={{ color: "hsl(var(--cream))" }}>✦ &nbsp; The Venue &nbsp; ✦</p>
 
             <div className="flex flex-col items-center text-center gap-3">
               <motion.span className="text-4xl"
@@ -238,13 +241,13 @@ const FooterSection = () => {
                 ))}
               </div>
 
-              <p className="font-sans text-xs leading-relaxed" style={{ color: "hsl(45 60% 75% / 0.55)" }}>
+              <p className="font-sans text-sm md:text-base leading-relaxed font-bold text-shadow-premium" style={{ color: "hsl(var(--cream))" }}>
                 Sangameshwarpet, Chikkamagaluru<br />Karnataka, India
               </p>
               <a href="https://maps.google.com/?q=Khandya+Planters'+Club,+Sangameshwarpet"
                 target="_blank" rel="noopener noreferrer"
-                className="font-sans text-xs tracking-[0.3em] uppercase mt-2 pb-px transition-all hover:opacity-100"
-                style={{ color: "hsl(45 70% 55% / 0.75)", borderBottom: "1px solid hsl(45 70% 55% / 0.35)" }}>
+                className="font-sans text-sm tracking-[0.3em] uppercase mt-2 pb-px transition-all hover:opacity-100 font-bold"
+                style={{ color: "hsl(var(--gold))", borderBottom: "1px solid hsl(var(--gold) / 0.5)" }}>
                 Get Directions →
               </a>
             </div>
@@ -260,8 +263,8 @@ const FooterSection = () => {
               <motion.img src={flowersImg} alt="" aria-hidden className="w-12 opacity-40 -rotate-12"
                 animate={{ rotate: [-12, -8, -12] }} transition={{ duration: 4, repeat: Infinity }} />
               <div className="text-center flex-1 px-1">
-                <p className="font-sans text-[9px] tracking-[0.5em] uppercase mb-1"
-                  style={{ color: "hsl(45 70% 55% / 0.5)" }}>Dress Code</p>
+                <p className="font-sans text-[9px] tracking-[0.5em] uppercase mb-1 text-shadow-premium font-bold"
+                  style={{ color: "hsl(var(--cream))" }}>Dress Code</p>
                 <p className="font-serif text-base md:text-lg" style={{ color: "hsl(45 60% 82%)" }}>
                   Traditional Wedding Attire
                 </p>
@@ -296,6 +299,7 @@ const FooterSection = () => {
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="flex-1 h-px" style={{ background: "linear-gradient(90deg, transparent, hsl(45 70% 55% / 0.3))" }} />
             <motion.img src={mandalaImg} alt="" aria-hidden className="w-8 opacity-50"
+              style={{ willChange: "transform" }}
               animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} />
             <div className="flex-1 h-px" style={{ background: "linear-gradient(90deg, hsl(45 70% 55% / 0.3), transparent)" }} />
           </div>

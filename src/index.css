@@ -7,6 +7,13 @@
 @import "@fontsource/montserrat/400.css";
 @import "@fontsource/montserrat/500.css";
 @import "@fontsource/montserrat/600.css";
+@import url("https://fonts.googleapis.com/css2?family=Playball&family=Alice&family=Marcellus&display=swap");
+
+:root {
+  --font-feminine: "Playball", cursive;
+  --font-traditional: "Alice", serif;
+  --font-accent: "Marcellus", serif;
+}
 
 @tailwind base;
 @tailwind components;
@@ -50,11 +57,11 @@
     --mint: 160 40% 70%;
     --lavender: 270 35% 75%;
     --lavender-soft: 270 25% 88%;
-    --gold: 45 70% 55%;
-    --gold-light: 45 60% 75%;
-    --gold-dark: 40 65% 40%;
+    --gold: 41 100% 67%; /* #FFC857 soft premium gold */
+    --gold-light: 45 100% 85%;
+    --gold-dark: 35 70% 45%;
     --navy: 215 50% 15%;
-    --cream: 40 40% 92%;
+    --cream: 45 100% 95%; /* #FFF8E7 ivory */
     --rose: 340 40% 70%;
 
     --font-serif: "Cormorant Garamond", Georgia, serif;
@@ -89,7 +96,7 @@
     position: absolute;
     inset: 0;
     background-color: transparent;
-    background-image: url("./assets/wedding-background.png");
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("./assets/wedding-background.png");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
@@ -114,6 +121,12 @@
   }
   .font-sans {
     font-family: var(--font-sans);
+  }
+  .font-feminine {
+    font-family: var(--font-feminine);
+  }
+  .font-traditional {
+    font-family: var(--font-traditional);
   }
   .text-gold {
     color: hsl(var(--gold));
@@ -173,6 +186,10 @@
   /* Gold tint filter for decorative motif SVGs */
   .motif-gold {
     filter: sepia(1) saturate(3) hue-rotate(5deg) brightness(0.95);
+  }
+
+  .text-shadow-premium {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.45);
   }
 }
 

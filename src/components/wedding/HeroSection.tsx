@@ -21,16 +21,27 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5 }}>
 
+          {/* Hashtag at the beginning */}
+          <motion.div
+            className="font-sans text-[12px] md:text-base tracking-[0.5em] uppercase text-cream mb-6 opacity-95 font-bold text-shadow-premium"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 0.95, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            #PRATHARVAN
+          </motion.div>
+
           <motion.h1
-            className="font-serif leading-tight"
+            className="font-feminine leading-[1.1] py-4"
             style={{
-              fontSize: "clamp(3.5rem, 12vw, 8rem)", 
+              fontSize: "clamp(3.5rem, 12vw, 9rem)", 
               background: "linear-gradient(135deg, hsl(45 80% 70%), hsl(40 60% 90%), hsl(45 70% 55%))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
               fontWeight: 400,
-              willChange: "transform, opacity"
+              willChange: "transform, opacity",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))"
             }}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -39,22 +50,23 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p className="font-serif italic my-1 md:my-2"
-            style={{ fontSize: "clamp(3rem, 8vw, 5.5rem)", color: "hsl(45 90% 70%)" }}
+            style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)", color: "hsl(45 90% 70%)" }}
             initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.0, type: "spring", stiffness: 200 }}>
             &amp;
           </motion.p>
 
           <motion.h1
-            className="font-serif leading-tight"
+            className="font-feminine leading-[1.1] py-4"
             style={{
-              fontSize: "clamp(4rem, 14vw, 9rem)",
+              fontSize: "clamp(4rem, 14vw, 10rem)",
               background: "linear-gradient(135deg, hsl(45 80% 70%), hsl(40 60% 90%), hsl(45 70% 55%))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
               fontWeight: 400,
-              willChange: "transform, opacity"
+              willChange: "transform, opacity",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))"
             }}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
