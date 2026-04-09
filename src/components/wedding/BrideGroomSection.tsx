@@ -58,8 +58,9 @@ const BrideGroomSection = () => {
             alt="Pratheeksha & Atharvan"
             className="w-[clamp(300px,85vw,450px)] h-auto object-contain relative z-20"
             style={{ 
-              mixBlendMode: "screen",
-              clipPath: "inset(5% 5% 5% 5%)",
+              mixBlendMode: "multiply", 
+              WebkitMaskImage: "linear-gradient(to bottom, black 95%, transparent 95%)",
+              maskImage: "linear-gradient(to bottom, black 95%, transparent 95%)",
               filter: "contrast(1.2) brightness(1.1) drop-shadow(0 12px 24px rgba(0,0,0,0.5))"
             }}
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}

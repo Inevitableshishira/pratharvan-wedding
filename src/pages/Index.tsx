@@ -28,11 +28,13 @@ const PageReveal = ({
 
 const Index = () => {
   return (
-    <main className="relative block h-auto min-h-screen pointer-events-auto overflow-x-hidden w-full" style={{ scrollBehavior: "auto" }}>
+    <main className="relative block h-auto min-h-screen pointer-events-auto overflow-x-hidden w-full max-w-[100vw] overflow-hidden" style={{ scrollBehavior: "auto" }}>
       
       {/* HERO — absolutely positioned over the temple peak */}
       <div className="absolute top-0 left-0 w-full z-10 pointer-events-none">
-        <HeroSection />
+        <div className="pointer-events-auto">
+          <HeroSection />
+        </div>
       </div>
 
       {/* 

@@ -225,11 +225,14 @@ html {
 }
 
 body {
-  overflow-x: hidden;
-  height: auto;
+  @apply bg-background text-foreground;
+  font-family: var(--font-sans);
+  position: relative;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   pointer-events: auto !important;
   user-select: auto !important;
+  touch-action: pan-y; /* Fix unresponsive scrolling on fast swipes */
 }
