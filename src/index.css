@@ -92,18 +92,37 @@
 
   /* Fixed Full-Screen Background — Maximum Clarity */
   body::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 414vw;
-    background-image: linear-gradient(rgba(0,0,0,0.1), transparent 30%), url("/bg-top.png");
+    height: 413.5vw; /* Precision height for the top scene */
+    background-image: linear-gradient(rgba(0,0,0,0.1), transparent 30%), url("./assets/wedding-background.png");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
     z-index: -2;
     pointer-events: none;
     filter: contrast(1.05) brightness(1.02) saturate(1.05);
+    -webkit-mask-image: linear-gradient(to bottom, black 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 92%, transparent 100%);
+  }
+
+  /* Footer/Events Background Pattern - Perfect Join */
+  body::after {
+    content: "";
+    position: absolute;
+    top: 413.5vw; /* Starts exactly where the top image ends */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("./assets/wedding-background-bottom-v2.png");
+    background-repeat: repeat;
+    background-size: 800px auto; /* Scaled for vintage detail */
+    z-index: -3;
+    pointer-events: none;
+    opacity: 0.9;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -231,9 +250,4 @@ body {
   pointer-events: auto !important;
   user-select: auto !important;
   touch-action: pan-y;
-  /* Repeating bottom pattern — stitched after top image */
-  background-image: url("/bg-bottom.png");
-  background-repeat: repeat;
-  background-size: 800px auto;
-  background-position: center 414vw;
 }
