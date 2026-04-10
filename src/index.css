@@ -104,53 +104,40 @@
   .font-traditional {
     font-family: var(--font-traditional);
   }
-  /* Fluid Typography — Scales perfectly from mobile to desktop */
-  h1, .text-fluid-h1 {
-    font-size: clamp(2rem, 8vw, 4.5rem);
-    line-height: 1.1;
-  }
-  h2, .text-fluid-h2 {
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    line-height: 1.2;
-  }
-  .text-fluid-body {
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  }
-
-  .text-gold {
-    color: hsl(var(--gold));
-  }
-  .text-cream {
-    color: #FFF8E7; /* Ivory ivory text for maximum premium feel */
-  }
-  .text-deep-emerald {
-    color: #0d2b21; /* Dark emerald for readability on light backgrounds */
-  }
-  .text-mint {
-    color: hsl(var(--mint));
-  }
-  .text-lavender {
-    color: hsl(var(--lavender));
-  }
-  .bg-emerald-deep {
-    background-color: hsl(var(--emerald-deep));
-  }
-  .bg-navy {
-    background-color: hsl(var(--navy));
-  }
-  .bg-gold {
-    background-color: hsl(var(--gold));
-  }
-  .border-gold {
-    border-color: hsl(var(--gold));
-  }
-  .border-gold-light {
-    border-color: hsl(var(--gold-light));
+  /* Adaptive Typography for Light Backgrounds */
+  .text-on-light {
+    color: #0d2b21; /* Rich dark emerald */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+    font-weight: 600;
   }
   
-  /* Precision Readability Shadows */
+  .text-on-dark {
+    color: #FFF8E7; /* Ivory ivory */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-gold-rich {
+    color: #c5a059; /* Darker more saturated gold for light bgs */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .text-fluid-h1 {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    line-height: 1.1;
+  }
+  .text-fluid-h2 {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    line-height: 1.2;
+  }
+  .text-fluid-label {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+  }
+
+  /* Precision Readability Shadows — Stronger for better visibility */
   .text-shadow-adaptive {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.6);
   }
   
   .gold-glow {

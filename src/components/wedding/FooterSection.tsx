@@ -304,10 +304,14 @@ const FooterSection = () => {
             <div className="flex-1 h-px" style={{ background: "linear-gradient(90deg, hsl(45 70% 55% / 0.3), transparent)" }} />
           </div>
 
-          <p className="font-sans text-[10px] tracking-[0.3em] uppercase" style={{ color: "hsl(45 70% 55% / 0.4)" }}>
-            Pratheeksha &amp; Atharvan · 08 · 05 · 2026
+          <p className="font-sans text-fluid-label tracking-[0.4em] uppercase mb-4 text-shadow-adaptive font-bold"
+            style={{ color: "#0d2b21" }}>
+            Pratheeksha &amp; Atharvan 
           </p>
-          <p className="font-sans text-[10px] mt-2" style={{ color: "hsl(270 35% 65% / 0.3)" }}>
+          <p className="font-sans text-sm tracking-[0.3em] uppercase opacity-90 font-bold" style={{ color: "#0d2b21" }}>
+            Friday, May 8, 2026 · Chikkamagaluru
+          </p>
+          <p className="font-sans text-lg mt-4 font-bold tracking-[0.2em]" style={{ color: "#8a4b3d" }}>
             #PRATHARVAN
           </p>
         </motion.div>
