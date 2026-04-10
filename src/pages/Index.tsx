@@ -33,15 +33,23 @@ const Index = () => {
     <main className="relative block h-auto min-h-screen pointer-events-auto overflow-x-hidden w-full max-w-[100vw] overflow-hidden bg-[#0d1a16]" style={{ scrollBehavior: "auto" }}>
       
       {/* ── BACKGROUND LAYERS ────────────────── */}
-      {/* 1. Top Scenery — absolute behind content, fades into solid bg color at the bottom */}
-      <div className="absolute top-0 left-0 right-0 z-[-5] pointer-events-none" 
+      {/* 1. Top Scenery Artwork */}
+      <div className="absolute top-0 left-0 right-0 z-[-10] pointer-events-none" 
         style={{ 
           height: "413.5vw",
-          backgroundImage: `linear-gradient(to bottom, transparent 70%, #0d1a16 98%, #0d1a16 100%), url(${backgroundTopImg})`,
+          backgroundImage: `url("${backgroundTopImg}")`,
           backgroundSize: "100% auto",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center top",
           filter: "contrast(1.05) brightness(1.02) saturate(1.05)"
+        }} 
+      />
+
+      {/* 2. Seamless Transition Fade — bridges scenery with solid background color */}
+      <div className="absolute top-0 left-0 right-0 z-[-5] pointer-events-none" 
+        style={{ 
+          height: "413.5vw",
+          backgroundImage: `linear-gradient(to bottom, transparent 65%, #0d1a16 98%, #0d1a16 100%)`
         }} 
       />
 
