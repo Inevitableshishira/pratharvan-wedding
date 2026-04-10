@@ -203,6 +203,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 4s linear infinite;
+  padding: 0.1em 0; /* CRITICAL: Prevents font descenders/ascenders from being clipped */
+  margin: -0.1em 0;
 }
 
 html {
