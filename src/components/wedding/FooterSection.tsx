@@ -135,6 +135,33 @@ const BlessingCard = () => (
 );
 
 // ─── Main FooterSection ───────────────────────────────────────────────────────
+const ModernAnimatedText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+  const letters = Array.from(text);
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05, delayChildren: delay }
+    }
+  };
+  const child = {
+    hidden: { opacity: 0, y: 20, filter: "blur(8px)", skewY: 2 },
+    visible: { 
+      opacity: 1, y: 0, filter: "blur(0px)", skewY: 0,
+      transition: { type: "spring", damping: 15, stiffness: 100 }
+    }
+  };
+  return (
+    <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-wrap justify-center">
+      {letters.map((char, index) => (
+        <motion.span key={index} variants={child} className="inline-block" style={{ whiteSpace: char === " " ? "pre" : "normal" }}>
+          {char}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+};
+
 const FooterSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
@@ -184,47 +211,37 @@ const FooterSection = () => {
       <div className="relative z-10 px-4 py-16 md:py-24 max-w-lg mx-auto flex flex-col gap-8">
 
         {/* ── 1. COUPLE NAMES HEADER ──────────────────────────────────────── */}
-        <motion.div className="text-center"
-          initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <div className="text-center">
 
           <motion.p className="font-sans text-[10px] tracking-[0.6em] uppercase mb-4 text-shadow-adaptive font-bold"
             style={{ color: "#0d2b21" }}
-            variants={{
-              hidden: { opacity: 0, letterSpacing: "1em" },
-              visible: { opacity: 1, letterSpacing: "0.6em", transition: { duration: 1.2 } }
-            }}>
+            initial={{ opacity: 0, letterSpacing: "1.2em", filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, letterSpacing: "0.6em", filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.4, ease: "easeOut" }}>
             ✦ &nbsp; ಶುಭ ವಿವಾಹ &nbsp; ✦
           </motion.p>
 
-          <motion.h2 
-            className="font-serif text-fluid-h2 gold-shimmer font-light italic leading-tight"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.8 } }
-            }}>
-            Pratheeksha &amp; Atharvan
-          </motion.h2>
+          <h2 className="font-serif text-fluid-h2 gold-shimmer font-light italic leading-tight">
+             <ModernAnimatedText text="Pratheeksha & Atharvan" delay={0.3} />
+          </h2>
           
           <motion.p 
             className="font-serif text-fluid-body mt-3 font-bold" style={{ color: "#0d2b21" }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { delay: 0.6, duration: 0.8 } }
-            }}>
+            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ delay: 1, duration: 0.8 }}>
             Friday, May 8, 2026
           </motion.p>
           
           <motion.p 
             className="font-sans text-[10px] tracking-[0.3em] uppercase mt-2 px-4 font-bold" style={{ color: "#0d2b21" }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { delay: 0.8, duration: 0.8 } }
-            }}>
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+            viewport={{ once: true }} transition={{ delay: 1.3, duration: 1 }}>
             Khandya Planters' Club · Chikkamagaluru
           </motion.p>
 
           <GoldDivider label="#PRATHARVAN" />
-        </motion.div>
+        </div>
 
         {/* ── 2. BLESSING CARD ───────────────────────────── */}
         <motion.div
