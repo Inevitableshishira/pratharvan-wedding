@@ -218,15 +218,18 @@ body {
   touch-action: pan-y; /* Fix unresponsive scrolling on fast swipes */
 }
 
-/* Immersive Full-Page Background — Maximum Reliability */
+/* Full-Page Continuous Background — Maximum Reliability */
 body::before {
   content: "";
-  position: fixed; /* Fixed to the viewport as requested */
-  inset: 0;
+  position: absolute; /* Scrolls with the page as requested */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Extends to the very end of the content */
   background-image: url("./assets/firefly-bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-size: 100% auto;
+  background-repeat: repeat-y; /* Repeats vertically to fill any page length */
+  background-position: center top;
   z-index: -10;
   pointer-events: none;
   filter: contrast(1.05) brightness(1.02) saturate(1.05);
