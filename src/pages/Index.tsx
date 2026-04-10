@@ -31,7 +31,7 @@ const PageReveal = ({
 
 const Index = () => {
   return (
-    <main className="relative block h-auto min-h-screen overflow-x-hidden w-full max-w-[100vw]" style={{ scrollBehavior: "auto" }}>
+    <main className="relative block h-auto min-h-screen pointer-events-auto overflow-x-hidden w-full max-w-[100vw] overflow-hidden" style={{ scrollBehavior: "auto" }}>
       
       {/* ── BACKGROUND LAYERS ────────────────── */}
       {/* 1. Base Repeating Pattern — covers everything */}
@@ -43,7 +43,7 @@ const Index = () => {
         }} 
       />
 
-      {/* 2. Top Scenery — absolute at the top, fades out exactly where the landscape ends */}
+      {/* 2. Top Scenery — absolute behind content */}
       <div className="absolute top-0 left-0 right-0 z-[-5] pointer-events-none" 
         style={{ 
           height: "413.5vw",
@@ -57,33 +57,51 @@ const Index = () => {
         }} 
       />
 
-      <HeroSection />
+      {/* HERO — absolutely positioned over the temple peak */}
+      <div className="absolute top-0 left-0 w-full z-10 pointer-events-none">
+        <div className="pointer-events-auto">
+          <HeroSection />
+        </div>
+      </div>
 
-      {/* Spacer to align with scenery */}
+      {/* 
+        This spacer exactly anchors the next section to the "brown horizontal line" 
+        (the temple base) which is precisely 34% down the background image. 
+        Because the background is scaled to 100% width, the image height is ~414vw, 
+        and 34% of 414vw is roughly 140vw.
+      */}
       <div style={{ height: "140vw", minHeight: "60vh", pointerEvents: "none" }} />
 
+      {/* CAR TRANSITION — placed right on the brown horizontal line! */}
       <div className="relative -mt-20 md:-mt-32 z-0 pointer-events-none">
         <CarTransition carType="black" flip={true} fromColor="transparent" toColor="transparent" />
       </div>
 
+      {/* BRIDE & GROOM — Starts EXACTLY at the temple base */}
       <section className="relative px-4 overflow-hidden" style={{ zIndex: 10 }}>
         <PageReveal>
           <BrideGroomSection />
         </PageReveal>
       </section>
 
+      {/* 🌺 Marigold mandala divider */}
       <TraditionalDivider variant="marigold" fromColor="transparent" toColor="transparent" />
 
+      {/* EVENTS */}
       <PageReveal delay={0.05}><EventsSection /></PageReveal>
 
+      {/* 🪔 Diya / lantern row divider row divider */}
       <TraditionalDivider variant="diya" fromColor="transparent" toColor="transparent" />
 
+      {/* COUNTDOWN */}
       <PageReveal delay={0.05}><CountdownSection /></PageReveal>
 
+      {/* ✦ Gold ornament divider before footer */}
       <TraditionalDivider variant="gopuram" fromColor="transparent" toColor="transparent" />
 
       <PageReveal delay={0.05}><FooterSection /></PageReveal>
 
+      {/* Overlay - now at bottom */}
       <FloatingLanterns />
     </main>
   );
