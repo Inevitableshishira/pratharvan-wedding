@@ -225,9 +225,9 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 413.5vw; /* Precise aspect-ratio for landscape scenery */
+  height: 413.5vw; /* Maintain tall aspect for new scenery */
   /* Single layer with color-matched bottom extension */
-  background-image: linear-gradient(to bottom, transparent 70%, #0d1a16 98%, #0d1a16 100%), url("./assets/wedding-background.png");
+  background-image: linear-gradient(to bottom, transparent 70%, #0d1a16 98%, #0d1a16 100%), url("./assets/firefly-bg.png");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center top;
