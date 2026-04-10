@@ -195,13 +195,13 @@ const FooterSection = () => {
             ✦ &nbsp; ಶುಭ ವಿವಾಹ &nbsp; ✦
           </motion.p>
 
-          <h2 className="font-serif text-fluid-h2 gold-shimmer font-light italic leading-tight text-shadow-adaptive">
-            Pratheeksha &amp; Atharvan
+          <h2 className="font-serif text-fluid-h2 gold-shimmer font-light italic leading-tight">
+            Pratheeksha $ Atharvan
           </h2>
-          <p className="font-serif text-fluid-body mt-3 text-shadow-adaptive" style={{ color: "#0d2b21" }}>
+          <p className="font-serif text-fluid-body mt-3 font-bold" style={{ color: "#0d2b21" }}>
             Friday, May 8, 2026
           </p>
-          <p className="font-sans text-[10px] tracking-[0.3em] uppercase mt-2 px-4 text-shadow-adaptive font-bold" style={{ color: "#0d2b21" }}>
+          <p className="font-sans text-[10px] tracking-[0.3em] uppercase mt-2 px-4 font-bold" style={{ color: "#0d2b21" }}>
             Khandya Planters' Club · Chikkamagaluru
           </p>
 
