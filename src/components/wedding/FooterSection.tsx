@@ -196,7 +196,7 @@ const FooterSection = () => {
           </motion.p>
 
           <h2 className="font-serif text-fluid-h2 gold-shimmer font-light italic leading-tight">
-            Pratheeksha $ Atharvan
+            Pratheeksha &amp; Atharvan
           </h2>
           <p className="font-serif text-fluid-body mt-3 font-bold" style={{ color: "#0d2b21" }}>
             Friday, May 8, 2026

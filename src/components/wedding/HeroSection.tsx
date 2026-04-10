@@ -52,7 +52,7 @@ const HeroSection = () => {
             style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)", color: "hsl(45 90% 70%)" }}
             initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.0, type: "spring", stiffness: 200 }}>
-            $
+            &amp;
           </motion.p>
 
           <motion.h1
