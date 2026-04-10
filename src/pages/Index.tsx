@@ -8,6 +8,9 @@ import CarTransition from "@/components/wedding/CarTransition";
 import TraditionalDivider from "@/components/wedding/TraditionalDivider";
 import FooterSection from "@/components/wedding/FooterSection";
 
+import backgroundBottomImg from "@/assets/wedding-background-bottom-v3.png";
+import backgroundTopImg from "@/assets/wedding-background.png";
+
 // Reusable scroll-reveal wrapper with fade + lift effect
 const PageReveal = ({
   children,
@@ -34,7 +37,7 @@ const Index = () => {
       {/* 1. Base Repeating Pattern — covers everything */}
       <div className="fixed inset-0 z-[-10] pointer-events-none" 
         style={{ 
-          backgroundImage: "url('/src/assets/wedding-background-bottom-v3.png')",
+          backgroundImage: `url(${backgroundBottomImg})`,
           backgroundRepeat: "repeat",
           backgroundSize: "600px auto"
         }} 
@@ -44,7 +47,7 @@ const Index = () => {
       <div className="absolute top-0 left-0 right-0 z-[-5] pointer-events-none" 
         style={{ 
           height: "413.5vw",
-          backgroundImage: "linear-gradient(to bottom, hsl(154 30% 10%) 0%, transparent 15%), url('/src/assets/wedding-background.png')",
+          backgroundImage: `linear-gradient(to bottom, hsl(154 30% 10%) 0%, transparent 15%), url(${backgroundTopImg})`,
           backgroundSize: "100% auto",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center top",
