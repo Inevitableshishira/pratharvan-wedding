@@ -205,8 +205,8 @@
     
     /* Dual Background Strategy */
     background-image: 
-      url("./assets/wedding-background.png"),
-      url("./assets/wedding-background-bottom-v5.png");
+      url("./assets/wedding-background.jpg"),
+      url("./assets/wedding-background-bottom-v5.jpg");
     background-position: center top, center 413.5vw;
     background-repeat: no-repeat, repeat;
     background-size: 100% auto, 600px auto;

@@ -36,7 +36,7 @@ const HeroSection = () => {
           {/* ── Mangala Shloka ── */}
           <motion.div
             className="mb-10 md:mb-16 select-text"
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           >
