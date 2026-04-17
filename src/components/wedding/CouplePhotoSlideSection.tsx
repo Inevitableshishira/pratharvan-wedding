@@ -121,31 +121,34 @@ const Carousel = () => {
           {/* Main photo display */}
           <div className="relative w-full h-full flex items-center justify-center">
             {SLIDES.map((slide, i) => (
-              <motion.div
-                key={i}
-                className="absolute inset-0 flex items-center justify-center"
-                initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-                animate={{ 
-                  opacity: i === current ? 1 : 0,
-                  scale: i === current ? 1 : 1.05,
-                  filter: i === current ? "blur(0px)" : "blur(10px)",
-                  zIndex: i === current ? 10 : 0
-                }}
-                transition={{ 
-                  duration: 0.8, 
-                  ease: [0.22, 1, 0.36, 1] 
-                }}
-              >
-                {slide.src ? (
-                  <img
-                    src={slide.src}
-                    alt={`Couple photo ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <PlaceholderSlide label={slide.label} aspectRatio="auto" />
-                )}
-              </motion.div>
+              i === current && (
+                <motion.div
+                  key={i}
+                  className="absolute inset-0 flex items-center justify-center"
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ 
+                    opacity: 1,
+                    scale: 1,
+                    zIndex: 10
+                  }}
+                  transition={{ 
+                    duration: 0.8, 
+                    ease: [0.22, 1, 0.36, 1] 
+                  }}
+                >
+                  {slide.src ? (
+                    <img
+                      src={slide.src}
+                      alt={`Couple photo ${i + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      style={{ transform: "translateZ(0)" }}
+                    />
+                  ) : (
+                    <PlaceholderSlide label={slide.label} aspectRatio="auto" />
+                  )}
+                </motion.div>
+              )
             ))}
           </div>
 
@@ -227,15 +230,17 @@ const CouplePhotoSlideSection = () => {
         src={ornamentMain}
         alt=""
         className="absolute -top-32 -left-32 w-[600px] opacity-[0.03] pointer-events-none"
+        style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
         animate={{ rotate: -360 }}
-        transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
       />
       <motion.img
         src={ornamentMain}
         alt=""
         className="absolute -bottom-32 -right-32 w-[600px] opacity-[0.03] pointer-events-none"
+        style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
         animate={{ rotate: 360 }}
-        transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
       />
       
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center px-0 md:px-5">

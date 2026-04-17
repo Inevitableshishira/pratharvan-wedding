@@ -109,7 +109,7 @@ const BrideGroomSection = () => {
 
         {/* Details Cards — Glassmorphism & Gold — Staggered */}
         <motion.div
-          className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 max-w-5xl w-full text-center px-4"
+          className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-6xl w-full text-center px-4"
           variants={cardContainer}
           initial="hidden"
           whileInView="visible"
@@ -129,15 +129,15 @@ const BrideGroomSection = () => {
             <div className="mb-8">
               <ModernAnimatedText 
                 text="Pratheeksha" 
-                fontSize="clamp(3rem, 10vw, 5.5rem)"
+                fontSize="clamp(2.5rem, 9vw, 5rem)"
                 animateOnLoad={true}
               />
             </div>
-            <p className="font-traditional text-xl md:text-3xl leading-relaxed text-ivory/90 font-medium">
+            <p className="font-traditional text-lg md:text-2xl leading-tight text-ivory/90 font-medium px-2">
               Daughter of<br />
-              <span className="text-rosegold-gradient font-bold drop-shadow-sm">Smt. Ramamani &amp; Shri Rajegowda</span>
+              <span className="text-rosegold-gradient font-bold drop-shadow-sm leading-normal">Smt. Ramamani &amp; Shri Rajegowda</span>
             </p>
-            <p className="text-label-caps mt-8 tracking-widest-luxury text-[0.7rem]" style={{ color: "hsl(340, 35%, 60%)" }}>
+            <p className="text-label-caps mt-8 tracking-widest-luxury text-[0.65rem] opacity-70" style={{ color: "hsl(340, 35%, 60%)" }}>
               Chittemakki, Balehonnur
             </p>
             
@@ -158,13 +158,13 @@ const BrideGroomSection = () => {
             <div className="mb-8">
               <ModernAnimatedText 
                 text="Atharvan" 
-                fontSize="clamp(3rem, 10vw, 5.5rem)"
+                fontSize="clamp(2.5rem, 9vw, 5rem)"
                 animateOnLoad={true}
               />
             </div>
-            <p className="font-traditional text-xl md:text-3xl leading-relaxed text-ivory/90 font-medium">
+            <p className="font-traditional text-lg md:text-2xl leading-tight text-ivory/90 font-medium px-2">
               Son of<br />
-              <span className="text-saffron-gradient font-bold drop-shadow-sm">Smt. Lekha &amp; Shri Jagadeesh Hegde</span>
+              <span className="text-saffron-gradient font-bold drop-shadow-sm leading-normal">Smt. Lekha &amp; Shri Jagadeesh Hegde</span>
             </p>
             <p className="text-label-caps mt-8 tracking-widest-luxury text-[0.7rem]" style={{ color: "hsl(28, 55%, 55%)" }}>
               Kalkuli Estate, Sringeri

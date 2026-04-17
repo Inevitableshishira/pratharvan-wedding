@@ -58,7 +58,7 @@ export const ModernAnimatedText = ({
   return (
     <div 
       className={`flex flex-wrap justify-center items-center gap-x-[0.25em] overflow-visible ${className}`} 
-      style={{ fontSize, letterSpacing: "-0.05em" }}
+      style={{ fontSize }}
     >
       {words.map((word, wordIdx) => (
         <motion.div
@@ -109,7 +109,7 @@ export const ModernAnimatedText = ({
                 fontFamily,
                 fill: `url(#${gradId}-${wordIdx})`,
                 stroke: "rgba(0,0,0,0.6)",
-                strokeWidth: "0.4px",
+                strokeWidth: "0.2px",
                 letterSpacing: "-0.01em",
                 fontWeight: 900
               }}
