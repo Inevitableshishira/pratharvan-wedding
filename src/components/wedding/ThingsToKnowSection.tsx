@@ -33,9 +33,8 @@ const ThingCard = ({
         <img 
           src={backgrounds[title]} 
           alt="" 
-          className="w-full h-full object-cover opacity-80 mix-blend-multiply transition-transform duration-700 group-hover:scale-110" 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
         />
-        <div className="absolute inset-0 bg-white/20" />
       </div>
 
       {/* Content — Typographically Balanced */}
