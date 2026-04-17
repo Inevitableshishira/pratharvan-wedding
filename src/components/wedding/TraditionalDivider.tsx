@@ -116,7 +116,7 @@ const DiyaDivider = ({
         className="absolute inset-x-0 top-2 text-center pointer-events-none"
         style={{ opacity: rowOpacity, zIndex: 2 }}
       >
-        <span className="text-xs tracking-[0.5em] uppercase font-sans text-shadow-premium font-bold"
+        <span className="text-xs md:text-sm tracking-[0.4em] md:tracking-[0.5em] uppercase font-sans text-shadow-premium font-bold"
           style={{ color: "hsl(var(--cream))" }}>
           ✦ &nbsp; ಶುಭ ವಿವಾಹ &nbsp; ✦
         </span>
@@ -236,7 +236,7 @@ const GopuramDivider = ({
 
       {/* Blessed text */}
       <div className="absolute inset-x-0 bottom-6 flex justify-center pointer-events-none" style={{ zIndex: 3 }}>
-        <span className="text-[10px] tracking-[0.6em] font-sans uppercase font-bold text-shadow-premium"
+        <span className="text-xs md:text-sm tracking-[0.4em] md:tracking-[0.6em] font-sans uppercase font-bold text-shadow-premium"
           style={{ color: "hsl(var(--cream))" }}>
           ✦ &nbsp; With Divine Blessings &nbsp; ✦
         </span>

@@ -1,131 +1,180 @@
 import { motion } from "framer-motion";
 import weddingPostageImg from "@/assets/couple-stamp.png";
 import mandalaImg from "@/assets/mandala-gold.png";
-import flowersImg from "@/assets/flowers.png";
 import { ModernAnimatedText } from "./AnimatedText";
+
+// Stagger container for cards
+const cardContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.25, delayChildren: 0.3 },
+  },
+};
+
+const cardItem = {
+  hidden: { opacity: 0, y: 60, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const BrideGroomSection = () => {
   return (
-    <section className="relative py-20 md:py-32 px-4 overflow-hidden flex flex-col items-center" style={{ zIndex: 10 }}>
-      {/* Spinning mandala watermarks */}
+    <section className="relative py-24 md:py-48 px-5 md:px-4 overflow-hidden flex flex-col items-center" style={{ zIndex: 10 }}>
+      {/* Spinning mandala watermarks with very low opacity */}
       <motion.img src={mandalaImg} alt="" aria-hidden
-        className="absolute -top-20 -right-20 w-64 opacity-[0.05] pointer-events-none"
+        className="absolute -top-20 -right-20 w-80 opacity-[0.04] pointer-events-none grayscale"
         style={{ willChange: "transform" }}
-        animate={{ rotate: 360 }} transition={{ duration: 35, repeat: Infinity, ease: "linear" }} />
+        animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} />
       <motion.img src={mandalaImg} alt="" aria-hidden
-        className="absolute -bottom-20 -left-20 w-52 opacity-[0.04] pointer-events-none"
+        className="absolute -bottom-20 -left-20 w-64 opacity-[0.03] pointer-events-none grayscale"
         style={{ willChange: "transform" }}
-        animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} />
-      {/* Om background */}
+        animate={{ rotate: -360 }} transition={{ duration: 50, repeat: Infinity, ease: "linear" }} />
+      
+      {/* Subtle Om background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
-        <svg width="300" height="300" viewBox="0 0 100 100" aria-hidden>
-          <text x="50" y="72" fontSize="72" textAnchor="middle" fill="hsl(45 70% 55%)" fontFamily="serif" fontWeight="bold">ಓಂ</text>
+        <svg width="400" height="400" viewBox="0 0 100 100" aria-hidden>
+          <text x="50" y="70" fontSize="70" textAnchor="middle" fill="#c5a059" fontFamily="serif" fontWeight="bold">ಓಂ</text>
         </svg>
       </div>
-      {/* Om background */}
 
       <motion.div
-        className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto"
+        className="relative z-10 flex flex-col items-center w-full max-w-6xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
-        {/* Section Title */}
         <motion.p
-          className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-cream mb-3 opacity-90 font-bold text-shadow-premium"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 0.9, y: 0 }}
+          className="text-label-caps mb-6"
+          style={{ color: "hsl(30, 35%, 65%)" }}
+          initial={{ opacity: 0, scale: 0.9, letterSpacing: "0.2em" }}
+          whileInView={{ opacity: 1, scale: 1, letterSpacing: "0.5em" }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          Meet the
+          MEET THE COUPLE
         </motion.p>
-        <div className="mb-12 md:mb-16">
+
+        <div className="mb-20 md:mb-32">
           <ModernAnimatedText 
             text="Bride & Groom" 
-            fontSize="clamp(3.5rem, 10vw, 7rem)"
+            fontSize="clamp(3.5rem, 12vw, 8rem)"
             animateOnLoad={true}
           />
         </div>
 
-        {/* Couple Portrait — Postage Stamp */}
-        <div className="relative mx-auto mt-6">
-          <motion.img
-            src={weddingPostageImg}
-            alt="Pratheeksha & Atharvan"
-            className="w-[clamp(300px,85vw,450px)] h-auto object-contain relative z-20"
-            style={{ 
-              mixBlendMode: "screen", 
-              clipPath: "inset(3px round 12px)", // Precision cut to remove edge artifacts
-              filter: "contrast(1.1) brightness(1.05) drop-shadow(0 8px 16px rgba(0,0,0,0.4))"
-            }}
-            initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+        {/* Couple Portrait — High Fidelity Frame */}
+        <div className="relative mx-auto mt-4 px-2">
+          <motion.div
+            className="p-4 md:p-6 glass-ivory rounded-xl border-gold-ornamental relative z-20"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, type: "spring", stiffness: 80 }}
-          />
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ 
+              boxShadow: "0 0 40px rgba(197,160,89,0.15), 0 20px 60px rgba(0,0,0,0.3)",
+              transition: { duration: 0.4 }
+            }}
+          >
+            <motion.img
+              src={weddingPostageImg}
+              alt="Pratheeksha & Atharvan"
+              className="block relative shadow-2xl"
+              style={{
+                width: "clamp(280px, 85vw, 500px)",
+                height: "auto",
+                objectFit: "cover",
+                borderRadius: "4px",
+                filter: "sepia(0.05) contrast(1.05) brightness(1.1)",
+              }}
+              initial={{ scale: 1.08 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </motion.div>
+          {/* Subtle floral accent */}
+          <motion.div 
+            className="absolute -bottom-10 -right-10 w-32 h-32 opacity-20 rotate-12 blur-[1px]"
+            animate={{ y: [0, -6, 0], rotate: [12, 15, 12] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <img src={mandalaImg} alt="" className="w-full h-full grayscale" />
+          </motion.div>
         </div>
 
-
-        {/* Bride & Groom Details */}
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 max-w-3xl text-center">
-          {/* Bride */}
+        {/* Details Cards — Glassmorphism & Gold — Staggered */}
+        <motion.div
+          className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 max-w-5xl w-full text-center px-4"
+          variants={cardContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          
+          {/* Bride Card — Rose-tinted */}
           <motion.div
-            className="section-glass p-8 rounded-2xl border border-gold/20 shadow-2xl"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            className="glass-rose p-10 md:p-16 rounded-[3rem] border-rosegold-ornamental relative overflow-hidden group cursor-default"
+            variants={cardItem}
+            whileHover={{ 
+              y: -8, 
+              boxShadow: "0 20px 60px rgba(210,130,150,0.12), 0 0 30px rgba(210,130,150,0.08), 0 0 40px rgba(197,160,89,0.06)",
+              transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+            }}
           >
-            <div className="mb-4">
+            <div className="mb-8">
               <ModernAnimatedText 
                 text="Pratheeksha" 
-                fontSize="clamp(2.5rem, 8vw, 4.5rem)"
+                fontSize="clamp(3rem, 10vw, 5.5rem)"
                 animateOnLoad={true}
               />
             </div>
-            <div className="w-16 h-px bg-gold/50 mx-auto my-5" />
-            <p className="font-traditional text-xl md:text-2xl text-cream opacity-100 leading-relaxed font-bold text-shadow-premium">
+            <p className="font-traditional text-xl md:text-3xl leading-relaxed text-ivory/90 font-medium">
               Daughter of<br />
-              <span className="text-gold">Smt. Ramamani &amp; Shri Rajegowda</span>
+              <span className="text-rosegold-gradient font-bold drop-shadow-sm">Smt. Ramamani &amp; Shri Rajegowda</span>
             </p>
-            <p className="font-sans text-sm text-cream mt-3 opacity-90 italic font-medium">
+            <p className="text-label-caps mt-8 tracking-widest-luxury text-[0.7rem]" style={{ color: "hsl(340, 35%, 60%)" }}>
               Chittemakki, Balehonnur
             </p>
-            <p className="font-sans text-xs text-cream mt-4 tracking-[0.3em] opacity-80 uppercase font-black">
-              The Bride
-            </p>
+            
+            {/* Hover Shimmer — rose-tinted */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(232,164,184,0.06)] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </motion.div>
 
-          {/* Groom */}
+          {/* Groom Card — Saffron-tinted */}
           <motion.div
-            className="section-glass p-8 rounded-2xl border border-gold/20 shadow-2xl"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            className="glass-saffron p-10 md:p-16 rounded-[3rem] border-gold-ornamental relative overflow-hidden group cursor-default"
+            variants={cardItem}
+            whileHover={{ 
+              y: -8, 
+              boxShadow: "0 20px 60px rgba(212,134,42,0.12), 0 0 30px rgba(212,134,42,0.08), 0 0 40px rgba(197,160,89,0.06)",
+              transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+            }}
           >
-            <div className="mb-4">
+            <div className="mb-8">
               <ModernAnimatedText 
                 text="Atharvan" 
-                fontSize="clamp(2.5rem, 8vw, 4.5rem)"
+                fontSize="clamp(3rem, 10vw, 5.5rem)"
                 animateOnLoad={true}
               />
             </div>
-            <div className="w-16 h-px bg-gold/50 mx-auto my-5" />
-            <p className="font-traditional text-xl md:text-2xl text-cream opacity-100 leading-relaxed font-bold text-shadow-premium">
+            <p className="font-traditional text-xl md:text-3xl leading-relaxed text-ivory/90 font-medium">
               Son of<br />
-              <span className="text-gold">Smt. Lekha &amp; Shri Jagadeesh Hegde</span>
+              <span className="text-saffron-gradient font-bold drop-shadow-sm">Smt. Lekha &amp; Shri Jagadeesh Hegde</span>
             </p>
-            <p className="font-sans text-sm text-cream mt-3 opacity-90 italic font-medium">
+            <p className="text-label-caps mt-8 tracking-widest-luxury text-[0.7rem]" style={{ color: "hsl(28, 55%, 55%)" }}>
               Kalkuli Estate, Sringeri
             </p>
-            <p className="font-sans text-xs text-cream mt-4 tracking-[0.3em] opacity-80 uppercase font-black">
-              The Groom
-            </p>
+
+            {/* Hover Shimmer — saffron-tinted */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(212,134,42,0.05)] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </motion.div>
-        </div>
+
+        </motion.div>
       </motion.div>
     </section>
   );
