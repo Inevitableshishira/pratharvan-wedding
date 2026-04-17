@@ -30,19 +30,13 @@ const CoupleSection = () => {
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.div
-          className="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center p-2 border border-gold/20"
-          style={{ 
-            background: "hsl(45 30% 10% / 0.4)",
-            boxShadow: "0 30px 60px -12px rgba(0,0,0,0.9)"
-          }}
+          className="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center p-2"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <img src={weddingPostageImg} alt="Pratheeksha & Atharvan" className="w-full h-full object-contain" />
-          <div className="absolute -top-1 -right-1 w-8 h-8 border-t-2 border-r-2 border-gold/30" />
-          <div className="absolute -bottom-1 -left-1 w-8 h-8 border-b-2 border-l-2 border-gold/30" />
         </motion.div>
 
         <motion.div

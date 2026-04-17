@@ -70,7 +70,7 @@ const BrideGroomSection = () => {
         {/* Couple Portrait — High Fidelity Frame */}
         <div className="relative mx-auto mt-4 px-2">
           <motion.div
-            className="p-4 md:p-6 glass-ivory rounded-xl border-gold-ornamental relative z-20"
+            className="p-4 md:p-6 glass-ivory rounded-xl relative z-20"
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
@@ -83,7 +83,7 @@ const BrideGroomSection = () => {
             <motion.img
               src={weddingPostageImg}
               alt="Pratheeksha & Atharvan"
-              className="block relative shadow-2xl"
+              className="block relative shadow-lg"
               style={{
                 width: "clamp(280px, 85vw, 500px)",
                 height: "auto",
@@ -118,7 +118,7 @@ const BrideGroomSection = () => {
           
           {/* Bride Card — Rose-tinted */}
           <motion.div
-            className="glass-rose p-10 md:p-16 rounded-[3rem] border-rosegold-ornamental relative overflow-hidden group cursor-default"
+            className="glass-rose p-10 md:p-16 rounded-[3rem] border border-[rgba(210,130,150,0.2)] relative overflow-hidden group cursor-default"
             variants={cardItem}
             whileHover={{ 
               y: -8, 
@@ -147,7 +147,7 @@ const BrideGroomSection = () => {
 
           {/* Groom Card — Saffron-tinted */}
           <motion.div
-            className="glass-saffron p-10 md:p-16 rounded-[3rem] border-gold-ornamental relative overflow-hidden group cursor-default"
+            className="glass-saffron p-10 md:p-16 rounded-[3rem] border border-[rgba(220,170,90,0.2)] relative overflow-hidden group cursor-default"
             variants={cardItem}
             whileHover={{ 
               y: -8, 

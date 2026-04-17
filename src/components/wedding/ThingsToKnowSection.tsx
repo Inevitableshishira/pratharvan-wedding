@@ -1,48 +1,41 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import bgHashtag from "@/assets/card-bgs/bg-hashtag.png";
-import bgWeather from "@/assets/card-bgs/bg-weather.png";
-import bgDress from "@/assets/card-bgs/bg-dress.png";
 import mandalaImg from "@/assets/mandala-gold.png";
+import hashtagBg from "@/assets/hashtag-ghibli-v2.png";
+import weatherBg from "@/assets/weather-ghibli-v2.png";
+import dressBg from "@/assets/dress-ghibli-v2.png";
 
 const ThingCard = ({
-  bgSrc,
   title,
   desc,
   delay,
 }: {
-  bgSrc: string;
   title: string;
   desc: string;
   delay: number;
 }) => {
-  const fallbacks: Record<string, string> = {
-    "Hashtag": "linear-gradient(135deg, #F0F0FF, #E6E6FA)", 
-    "Weather": "linear-gradient(135deg, #F0FFFF, #E0F7FA)", 
-    "Dress Code": "linear-gradient(135deg, #FFF9F0, #FFF5E6)", 
+  const backgrounds: Record<string, string> = {
+    "Hashtag": hashtagBg,
+    "Weather": weatherBg,
+    "Dress Code": dressBg,
   };
 
   return (
     <motion.div
-      className="relative flex flex-col items-center text-center px-10 py-16 rounded-[2.5rem] h-full overflow-hidden shadow-xl group"
-      style={{
-        border: "1px solid rgba(210, 180, 140, 0.3)",
-        background: fallbacks[title] || "#FDF5E6",
-      }}
+      className="relative flex flex-col items-center text-center px-10 py-16 rounded-[2.5rem] h-full overflow-hidden shadow-sm group bg-[#FAFAF5]"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 1 }}
     >
-      {/* Hand-Painted Background Artwork */}
+      {/* Ghibli Style Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={bgSrc} 
+          src={backgrounds[title]} 
           alt="" 
-          className="w-full h-full object-cover opacity-60 mix-blend-multiply transition-transform duration-1000 group-hover:scale-110" 
-          onError={(e) => (e.currentTarget.style.display = 'none')}
+          className="w-full h-full object-cover opacity-80 mix-blend-multiply transition-transform duration-700 group-hover:scale-110" 
         />
-        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-0 bg-white/20" />
       </div>
 
       {/* Content — Typographically Balanced */}
@@ -75,17 +68,14 @@ const ThingsToKnowSection = () => {
 
   const ITEMS = [
     {
-      bgSrc: bgHashtag,
       title: "Hashtag",
       desc: "Share your special moments with us using our official wedding hashtag — #PRATHARVAN",
     },
     {
-      bgSrc: bgWeather,
       title: "Weather",
       desc: "A beautiful day awaits with warm sunlight around 30°C and pleasant, breezy evenings.",
     },
     {
-      bgSrc: bgDress,
       title: "Dress Code",
       desc: "We look forward to seeing everyone in their finest Traditional Wedding Attire.",
     },

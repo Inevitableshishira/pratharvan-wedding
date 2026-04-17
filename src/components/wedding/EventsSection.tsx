@@ -1,22 +1,18 @@
 import { motion } from "framer-motion";
 import EventCard from "./EventCard";
 import mandalaImg from "@/assets/mandala-gold.png";
-import bgHavan from "@/assets/card-bgs/bg-havan.png";
-import bgReception from "@/assets/card-bgs/bg-reception.png";
 
 const events = [
   { 
     title: "Maduve Samarambha", 
-    bgSrc: bgHavan,
     time: "09:30 AM — 10:00 AM", 
-    date: "Tuesday, April 14th 2026", 
+    date: "Friday, May 8, 2026", 
     venue: "Khandya Planters' Club" 
   },
   { 
     title: "Arathakshete", 
-    bgSrc: bgReception,
     time: "11:30 AM onwards", 
-    date: "Tuesday, April 14th 2026", 
+    date: "Friday, May 8, 2026", 
     venue: "Khandya Planters' Club" 
   },
 ];

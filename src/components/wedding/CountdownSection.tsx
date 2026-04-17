@@ -113,7 +113,7 @@ const CountdownSection = () => {
 
               {/* Tile — alternating warm tints */}
               <div
-                className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center relative rounded-[2rem] glass-blush border-plum-ornamental overflow-hidden shadow-2xl"
+                className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center relative rounded-[2rem] glass-blush overflow-hidden shadow-2xl"
                 style={{
                   boxShadow: i % 2 === 0 
                     ? "0 0 20px rgba(100,40,70,0.08), inset 0 0 20px rgba(100,40,70,0.04)" 

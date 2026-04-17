@@ -20,7 +20,7 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
       transition={{ duration: 1.5, delay: index * 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       <motion.div 
-        className="relative w-full aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl border-plum-ornamental"
+        className="relative w-full aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl border border-[hsl(335,30%,80%)]"
         style={{ background: "hsl(335, 30%, 88%)" }}
         whileHover={{ 
           y: -10,
@@ -28,23 +28,16 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
           transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
         }}
       >
-        {/* Background Image with Depth + hover zoom */}
+        {/* Background Gradient — Thematic */}
         <div className="absolute inset-0 z-0">
-          {bgSrc && (
-            <motion.img 
-              src={bgSrc} 
-              alt="" 
-              className="w-full h-full object-cover opacity-60 grayscale-[0.3]"
-              initial={{ scale: 1.15 }}
-              whileInView={{ scale: 1.05 }}
-              viewport={{ once: true }}
-              transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ scale: 1 }}
-              onError={(e) => (e.currentTarget.style.display = 'none')}
-            />
-          )}
-          {/* Gradients for text protection */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(335,30%,88%)] via-transparent to-[hsl(335,30%,88%)/0.4]" />
+          <div 
+            className="w-full h-full opacity-40 mix-blend-multiply transition-all duration-700"
+            style={{ 
+              background: title.includes("Maduve") 
+                ? "linear-gradient(135deg, #FF9E2C, #FFD700, #FF5F1F)" // Saffron/Orange/Gold for Ceremony
+                : "linear-gradient(135deg, #E8A4B8, #FDF5E6, #D28296)" // Rose/Ivory/Deep Rose for Reception
+            }}
+          />
         </div>
 
         {/* Shimmer sweep on hover — warm plum-pink */}
@@ -53,7 +46,7 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
         {/* The Central Seal */}
         <div className="relative z-20 w-full h-full flex flex-col items-center justify-center p-8">
           <motion.div 
-            className="glass-blush p-10 md:p-14 rounded-[3.5rem] shadow-2xl flex flex-col items-center w-[92%] border-plum-ornamental"
+            className="glass-blush p-10 md:p-14 rounded-[3.5rem] shadow-2xl flex flex-col items-center w-[92%] border border-[rgba(160,80,110,0.1)]"
             initial={{ scale: 0.85, opacity: 0, filter: "blur(6px)" }}
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ delay: 0.6 + index * 0.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -125,7 +118,7 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
           href={`https://maps.google.com/?q=${encodeURIComponent(venue + ", Chikkamagaluru")}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-5 px-16 py-6 border-plum-ornamental backdrop-blur-md text-label-caps text-[10px] tracking-widest-luxury transition-all shadow-2xl"
+          className="inline-flex items-center gap-5 px-16 py-6 border border-[hsl(335,30%,80%)] backdrop-blur-md text-label-caps text-[10px] tracking-widest-luxury transition-all shadow-2xl"
           style={{ color: "hsl(335, 45%, 20%)" }}
           whileHover={{ 
             scale: 1.05, 

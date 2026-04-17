@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import carBlackImg from "@/assets/vintage-car-black.png";
+import carBlackImg from "@/assets/vintage-car-main.webp";
 import carTealImg from "@/assets/vintage-car-teal.png";
 
 interface CarTransitionProps {
@@ -117,7 +117,7 @@ const CarTransition = ({
               alt="vintage car"
               className="w-56 md:w-80 relative z-20"
               style={{
-                filter: "contrast(1.05) brightness(0.95) drop-shadow(0 15px 25px rgba(0,0,0,0.5))",
+                filter: "drop-shadow(0 15px 25px rgba(0,0,0,0.5))",
                 // Flip the face based on user feedback
                 transform: flip ? "scaleX(1)" : "scaleX(-1)",
               }}

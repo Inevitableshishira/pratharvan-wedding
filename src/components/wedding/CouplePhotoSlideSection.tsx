@@ -110,7 +110,7 @@ const Carousel = () => {
       >
         {/* Inner Frame with double border effect */}
         <div
-          className="relative bg-[#1a1510] overflow-hidden flex items-center justify-center border border-[#c5a059]/30 md:rounded-lg"
+          className="relative bg-[#FDF5E6]/10 overflow-hidden flex items-center justify-center border border-[#c5a059]/30 md:rounded-lg"
           style={{ height: "clamp(420px, 120vw, 580px)" }}
         >
           {/* Decorative Corner Accents (Optional but premium) */}
@@ -184,7 +184,7 @@ const Carousel = () => {
         <button
           aria-label="Previous photo"
           onClick={prev}
-          className="w-10 h-10 rounded-full border border-gold-ornamental/30 flex items-center justify-center transition-all hover:scale-110 active:scale-95 bg-white/5 text-[#c5a059]"
+          className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center transition-all hover:scale-110 active:scale-95 bg-white/5 text-[#c5a059]"
         >
           ‹
         </button>
@@ -213,7 +213,7 @@ const Carousel = () => {
         <button
           aria-label="Next photo"
           onClick={next}
-          className="w-10 h-10 rounded-full border border-gold-ornamental/30 flex items-center justify-center transition-all hover:scale-110 active:scale-95 bg-white/5 text-[#c5a059]"
+          className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center transition-all hover:scale-110 active:scale-95 bg-white/5 text-[#c5a059]"
         >
           ›
         </button>

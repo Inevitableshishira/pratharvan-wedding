@@ -78,8 +78,8 @@ const VenueSection = () => {
               <div className="mb-12">
                 <p className="font-sans text-[11px] tracking-[0.4em] uppercase font-black text-slate-400 mb-4">Date & Time</p>
                 <p className="font-serif text-2xl md:text-3xl font-black text-slate-800 leading-tight">
-                  Tues, 14th April 2026<br/>
-                  <span className="text-xl text-slate-500 font-bold italic">10:15 AM Onwards</span>
+                  Friday, May 8, 2026<br/>
+                  <span className="text-xl text-slate-500 font-bold italic">09:30 AM Onwards</span>
                 </p>
               </div>
 
