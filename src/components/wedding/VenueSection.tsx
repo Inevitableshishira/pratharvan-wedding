@@ -7,7 +7,7 @@ const VenueSection = () => {
   return (
     <section
       id="venue"
-      className="relative py-20 md:py-40 px-5 overflow-hidden flex flex-col items-center bg-[#FAFAF5]"
+      className="relative py-20 md:py-40 px-3 md:px-5 overflow-hidden flex flex-col items-center bg-[#FAFAF5]"
       style={{ zIndex: 0 }}
     >
       {/* Background Watermarks */}
@@ -37,11 +37,11 @@ const VenueSection = () => {
         </motion.div>
 
         {/* Combined Infomation Card */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 w-full mb-20 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 w-full mb-20 items-stretch">
           
           {/* Main Visual */}
           <motion.div
-            className="md:col-span-12 lg:col-span-10 relative aspect-[16/9] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
+            className="md:col-span-12 lg:col-span-10 relative aspect-[5/6] md:aspect-[16/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -49,11 +49,11 @@ const VenueSection = () => {
           >
             <img src={venueBg} alt="The Venue" className="w-full h-full object-cover brightness-95" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-            <div className="absolute bottom-10 left-10 text-white">
+            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
               <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl font-black mb-2 italic leading-tight">
                 Khandya Planters&apos; Club
               </h3>
-              <p className="font-sans text-xs md:text-sm tracking-[0.4em] uppercase font-black opacity-80">
+              <p className="font-sans text-[10px] md:text-sm tracking-[0.3em] md:tracking-[0.4em] uppercase font-black opacity-80">
                 Sangameshwarpet, Chikkamagaluru
               </p>
             </div>
@@ -69,7 +69,7 @@ const VenueSection = () => {
           >
             {/* Merged Info Box — No Icons */}
             <div 
-              className="flex-1 bg-white p-6 rounded-[3rem] shadow-xl relative overflow-hidden border border-[#D2B48C]/30 flex flex-col justify-center"
+              className="flex-1 bg-white p-6 rounded-[2rem] md:rounded-[3rem] shadow-xl relative overflow-hidden border border-[#D2B48C]/30 flex flex-col justify-center"
             >
               <div className="absolute top-[-20%] right-[-20%] w-64 h-64 opacity-[0.03] pointer-events-none grayscale">
                 <img src={mandalaImg} alt="" className="animate-spin-slow" />
