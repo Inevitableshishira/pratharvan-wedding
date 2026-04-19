@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import weddingPostageImg from "@/assets/wedding-postage.png";
 import vintageTeal from "@/assets/vintage-car-teal.png";
-import vintageBlack from "@/assets/vintage-car-black.png";
+import vintageBlack from "@/assets/vintage-car-custom.png";
 
 const CoupleSection = () => {
   const ref = useRef<HTMLDivElement>(null);

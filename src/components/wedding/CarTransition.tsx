@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import carBlackImg from "@/assets/vintage-car-main.webp";
+import carBlackImg from "@/assets/vintage-car-custom.png";
 import carTealImg from "@/assets/vintage-car-teal.png";
 
 interface CarTransitionProps {
@@ -62,11 +62,11 @@ const CarTransition = ({
   return (
     <div
       ref={ref}
-      className="relative w-full overflow-hidden pointer-events-none"
+      className="relative w-full overflow-visible pointer-events-none"
       style={{
-        height: "280px", // Increased height
+        height: "350px", 
         background: `linear-gradient(180deg, ${fromColor}, ${toColor})`,
-        zIndex: 50, // Improved composition performance
+        zIndex: 50,
         isolation: "isolate",
       }}
     >
@@ -77,7 +77,7 @@ const CarTransition = ({
         <div
           className="absolute left-0 right-0 pointer-events-none opacity-20"
           style={{
-            top: "70%",
+            top: "85%",
             height: "2px",
             backgroundImage: "linear-gradient(90deg, hsl(45 70% 55%) 50%, transparent 50%)",
             backgroundSize: "60px 100%",
@@ -94,10 +94,10 @@ const CarTransition = ({
             rotate: carRotate,
             opacity: carOpacity,
             scale: carScale,
-            top: "12%", // Refined further for a distant look
+            top: "5%", 
             zIndex: 5,
-            left: "50%", // Anchor to exact horizontal center
-            translateX: "-50%", // Keep the car itself centered relative to its position
+            left: "50%", 
+            translateX: "-50%", 
           }}
         >
           <div className="relative">
