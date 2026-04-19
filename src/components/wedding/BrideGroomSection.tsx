@@ -71,16 +71,16 @@ const BrideGroomSection = () => {
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 max-w-6xl text-center">
           
           <motion.div
-            className="glass-pink-surface p-10 md:p-14 rounded-[3.5rem] border border-[rgba(160,80,110,0.15)] shadow-2xl relative overflow-hidden group"
+            className="glass-pink-surface p-10 md:p-14 rounded-[3.5rem] border border-[rgba(160,80,110,0.15)] shadow-2xl relative overflow-hidden group flex flex-col items-center"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <div className="mb-6">
+            <div className="mb-6 w-full">
               <ModernAnimatedText 
                 text="Pratheeksha" 
-                fontSize="clamp(2.5rem, 8vw, 4.5rem)"
+                fontSize="clamp(2rem, 8vw, 3.5rem)"
                 animateOnLoad={true}
                 gradientColors={["#581c1c", "#8d2d2d", "#581c1c"]}
               />
@@ -94,32 +94,28 @@ const BrideGroomSection = () => {
             </p>
 
             {/* Siblings & Relatives */}
-            <div className="mt-10 pt-8 border-t border-slate-200">
-              <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-slate-500 mb-4 font-black">Family & Relatives</p>
-              <p className="font-traditional text-sm md:text-base text-slate-700 leading-relaxed font-medium">
-                Prajwal, Venkatesh, Saraswathi, and children.
-              </p>
-              <p className="font-sans text-[9px] text-slate-500 mt-4 uppercase tracking-[0.2em]">
+            <div className="mt-10 pt-8 border-t border-slate-200 mt-auto w-full">
+              <p className="font-sans text-[11px] text-slate-500 uppercase tracking-[0.2em]">
                 Chittemakki and Karagunda families
               </p>
             </div>
 
-            <p className="font-sans text-[10px] text-wine mt-10 tracking-[0.4em] opacity-40 uppercase font-black">
+            <p className="font-sans text-[11px] md:text-xs text-wine mt-12 tracking-[0.5em] opacity-90 uppercase font-black">
               The Bride
             </p>
           </motion.div>
 
           <motion.div
-            className="glass-pink-surface p-10 md:p-14 rounded-[3.5rem] border border-[rgba(160,80,110,0.15)] shadow-2xl relative overflow-hidden group"
+            className="glass-pink-surface p-10 md:p-14 rounded-[3.5rem] border border-[rgba(160,80,110,0.15)] shadow-2xl relative overflow-hidden group flex flex-col items-center"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <div className="mb-6">
+            <div className="mb-6 w-full">
               <ModernAnimatedText 
                 text="Atharvan Hegde" 
-                fontSize="clamp(2.5rem, 8vw, 4.5rem)"
+                fontSize="clamp(2rem, 8vw, 3.5rem)"
                 animateOnLoad={true}
                 gradientColors={["#581c1c", "#8d2d2d", "#581c1c"]}
               />
@@ -133,17 +129,13 @@ const BrideGroomSection = () => {
             </p>
 
             {/* Siblings & Relatives */}
-            <div className="mt-10 pt-8 border-t border-slate-200">
-              <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-slate-500 mb-4 font-black">Family & Relatives</p>
-              <p className="font-traditional text-sm md:text-base text-slate-700 leading-relaxed font-medium">
-                Anushruthi, Arjun, Kumari Ahana, Ananya, Rakshith, Prema Nagesh, and children.
-              </p>
-              <p className="font-sans text-[9px] text-slate-500 mt-4 uppercase tracking-[0.2em]">
+            <div className="mt-10 pt-8 border-t border-slate-200 mt-auto w-full">
+              <p className="font-sans text-[11px] text-slate-500 uppercase tracking-[0.2em]">
                 Kalkuli and Nandipura families
               </p>
             </div>
 
-            <p className="font-sans text-[10px] text-wine mt-10 tracking-[0.4em] opacity-40 uppercase font-black">
+            <p className="font-sans text-[11px] md:text-xs text-wine mt-12 tracking-[0.5em] opacity-90 uppercase font-black">
               The Groom
             </p>
           </motion.div>

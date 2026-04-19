@@ -41,7 +41,7 @@ const VenueSection = () => {
           
           {/* Main Visual */}
           <motion.div
-            className="md:col-span-12 lg:col-span-10 relative aspect-[5/6] md:aspect-[16/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
+            className="md:col-span-12 lg:col-span-10 relative w-full h-[450px] md:h-auto md:aspect-[16/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -49,7 +49,7 @@ const VenueSection = () => {
           >
             <img src={venueBg} alt="The Venue" className="w-full h-full object-cover brightness-95" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white z-10 w-[80%]">
               <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl font-black mb-2 italic leading-tight">
                 Khandya Planters&apos; Club
               </h3>
@@ -79,15 +79,14 @@ const VenueSection = () => {
                 <p className="font-sans text-[11px] tracking-[0.4em] uppercase font-black text-slate-400 mb-4">Date & Time</p>
                 <p className="font-serif text-2xl md:text-3xl font-black text-slate-800 leading-tight">
                   Friday, May 8, 2026<br/>
-                  <span className="text-xl text-slate-500 font-bold italic border-l-2 border-slate-300 pl-3">09:30 AM — 10:00 AM</span>
+                  <span className="text-xl text-slate-500 font-bold italic border-l-2 border-slate-300 pl-3 whitespace-nowrap">09:30 AM — 10:00 AM</span>
                 </p>
               </div>
 
               <div>
-                <p className="font-sans text-[11px] tracking-[0.4em] uppercase font-black text-slate-400 mb-4">Dress Code</p>
+                <p className="font-sans text-[11px] tracking-[0.4em] uppercase font-black text-slate-400 mb-4">Dress Gorgeously</p>
                 <p className="font-serif text-2xl md:text-3xl font-black text-slate-800 leading-tight">
-                  Traditional<br/>
-                  <span className="text-xl text-slate-500 font-bold italic">Indian Ethnic Wear</span>
+                  Traditional
                 </p>
               </div>
             </div>

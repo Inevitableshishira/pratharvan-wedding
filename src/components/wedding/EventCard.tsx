@@ -51,11 +51,11 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ delay: 0.6 + index * 0.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-label-caps text-[9px] mb-8" style={{ 
-              color: title.includes("Maduve") ? "hsl(345, 60%, 28%)" : "hsl(320, 40%, 28%)" 
-            }}>
-               {title.includes("Maduve") ? "THE CEREMONY" : "THE CELEBRATION"}
-            </p>
+              <p className="text-label-caps text-[9px] mb-8" style={{ 
+                color: title.includes("Maduve") ? "hsl(345, 60%, 28%)" : "hsl(320, 40%, 28%)" 
+              }}>
+                 {title.includes("Maduve") ? "Maduve Samarambha" : "THE CELEBRATION"}
+              </p>
 
             <h3 className={`font-serif text-[clamp(2.2rem,6.5vw,3rem)] font-black leading-[0.95] mb-8 tracking-tighter-framer text-center drop-shadow-sm ${
               title.includes("Maduve") ? "text-saffron-gradient" : "text-plum-gradient"
@@ -84,7 +84,7 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
             )}
 
             <div className="flex flex-col items-center">
-              <p className={`font-serif text-3xl md:text-4xl font-black italic tracking-wide drop-shadow-sm ${
+              <p className={`font-serif text-3xl md:text-4xl font-black italic tracking-wide drop-shadow-sm whitespace-nowrap ${
                 title.includes("Maduve") ? "text-kumkum-gradient" : "text-wine-gradient"
               }`}>
                 {time}
@@ -110,26 +110,9 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
         <p className="font-serif text-2xl md:text-3xl font-black tracking-widest-luxury mb-4 text-wine-gradient drop-shadow-md">
           {date.toUpperCase()}
         </p>
-        <p className="font-traditional text-lg italic mb-10 drop-shadow-md" style={{ color: "hsl(15, 35%, 30%)" }}>
+        <p className="font-traditional text-lg italic mb-2 drop-shadow-md" style={{ color: "hsl(15, 35%, 30%)" }}>
           {venue}
         </p>
-        
-        <motion.a
-          href={`https://maps.google.com/?q=${encodeURIComponent(venue + ", Chikkamagaluru")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-5 px-16 py-6 border border-[hsl(335,30%,70%)] bg-white/40 backdrop-blur-md text-label-caps text-[10px] font-bold tracking-widest-luxury transition-all shadow-xl hover:bg-white/60"
-          style={{ color: "hsl(335, 45%, 15%)" }}
-          whileHover={{ 
-            scale: 1.05, 
-            y: -6,
-            boxShadow: "0 12px 40px rgba(100,40,70,0.15)",
-          }}
-          whileTap={{ scale: 0.97 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        >
-          VIEW PATH 📍
-        </motion.a>
       </motion.div>
     </motion.div>
   );

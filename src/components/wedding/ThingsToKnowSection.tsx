@@ -17,45 +17,47 @@ const ThingCard = ({
   const backgrounds: Record<string, string> = {
     "Hashtag": hashtagBg,
     "Weather": weatherBg,
-    "Dress Code": dressBg,
+    "Dress Gorgeously": dressBg,
   };
 
   return (
     <motion.div
-      className="relative flex flex-col items-center text-center px-10 py-16 rounded-[2.5rem] h-full overflow-hidden shadow-sm group bg-[#FAFAF5]"
+      className="relative flex flex-col items-center text-center px-8 py-14 rounded-[3rem] min-h-[320px] overflow-hidden shadow-2xl group border border-white/20"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 1 }}
     >
-      {/* Ghibli Style Background Image */}
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={backgrounds[title]} 
           alt="" 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
         />
+        {/* Darkening/Vignette Overlay for better text contrast */}
+        <div className="absolute inset-0 bg-white/40 group-hover:bg-white/30 transition-colors duration-500" />
       </div>
 
-      {/* Content — Typographically Balanced */}
-      <div className="relative z-10 flex flex-col items-center justify-center flex-1">
-        <p className="font-sans text-[10px] tracking-[0.5em] uppercase font-black text-slate-400 mb-6 opacity-60">
+      {/* Content — Enforced Z-Index and Flex */}
+      <div className="relative z-20 flex flex-col items-center justify-center h-full w-full">
+        <p className="font-sans text-[10px] tracking-[0.5em] uppercase font-black text-slate-500 mb-6 drop-shadow-sm">
           ✦ &nbsp; NOTE &nbsp; ✦
         </p>
         
-        <h3 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-black text-slate-800 mb-6 tracking-tighter leading-none">
+        <h3 className="font-serif text-[clamp(1.75rem,5vw,2.2rem)] font-black text-slate-900 mb-6 tracking-tighter leading-tight drop-shadow-sm">
           {title}
         </h3>
 
-        <div className="w-8 h-[1px] bg-slate-300 mb-8" />
+        <div className="w-10 h-[1px] bg-slate-400 mb-8" />
 
-        <p className="font-serif text-lg leading-relaxed text-slate-700 font-bold px-2 italic">
+        <p className="font-serif text-lg md:text-xl leading-relaxed text-slate-800 font-bold px-2 italic drop-shadow-sm">
           {desc}
         </p>
       </div>
 
       {/* Subtle paper grain / watermark */}
-      <div className="absolute -bottom-10 -right-10 w-32 h-32 opacity-[0.03] grayscale brightness-50 pointer-events-none">
+      <div className="absolute -bottom-10 -right-10 w-32 h-32 opacity-[0.05] grayscale brightness-50 pointer-events-none z-10">
         <img src={mandalaImg} alt="" className="w-full h-full animate-spin-slow" />
       </div>
     </motion.div>
@@ -75,7 +77,7 @@ const ThingsToKnowSection = () => {
       desc: "A beautiful day awaits with warm sunlight around 30°C and pleasant, breezy evenings.",
     },
     {
-      title: "Dress Code",
+      title: "Dress Gorgeously",
       desc: "We look forward to seeing everyone in their finest Traditional Wedding Attire.",
     },
   ];
