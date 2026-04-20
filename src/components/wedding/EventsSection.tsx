@@ -10,7 +10,7 @@ const events = [
     venue: "Khandya Planters' Club" 
   },
   { 
-    title: "Arathakshete", 
+    title: "Arathakshathe", 
     time: "11:30 AM onwards", 
     date: "Friday, May 8, 2026", 
     venue: "Khandya Planters' Club" 
