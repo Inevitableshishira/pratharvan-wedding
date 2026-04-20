@@ -83,12 +83,7 @@ const VenueSection = () => {
                 </p>
               </div>
 
-              <div>
-                <p className="font-sans text-[11px] tracking-[0.4em] uppercase font-black text-slate-400 mb-4">Dress Gorgeously</p>
-                <p className="font-serif text-2xl md:text-3xl font-black text-slate-800 leading-tight">
-                  Traditional
-                </p>
-              </div>
+
             </div>
 
             {/* Directions Button */}

@@ -51,11 +51,13 @@ const EventCard = ({ title, bgSrc, time, date, venue, index, names }: EventCardP
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ delay: 0.6 + index * 0.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
+            {title !== "Maduve Samarambha" && (
               <p className="text-label-caps text-[9px] mb-8" style={{ 
                 color: title.includes("Maduve") ? "hsl(345, 60%, 28%)" : "hsl(320, 40%, 28%)" 
               }}>
                  {title.includes("Maduve") ? "Maduve Samarambha" : "THE CELEBRATION"}
               </p>
+            )}
 
             <h3 className={`font-serif text-[clamp(2.2rem,6.5vw,3rem)] font-black leading-[0.95] mb-8 tracking-tighter-framer text-center drop-shadow-sm ${
               title.includes("Maduve") ? "text-saffron-gradient" : "text-plum-gradient"
