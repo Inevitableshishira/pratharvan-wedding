@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import carBlackImg from "@/assets/vintage-car-black.png";
+import carBlackImg from "@/assets/vintage-car-custom.png";
 import carTealImg from "@/assets/vintage-car-teal.png";
 
 interface CarTransitionProps {
@@ -29,7 +29,7 @@ const CarTransition = ({
   // This approach is perfectly responsive for all devices (Mobile to Ultra-wide).
   const carX = useTransform(
     scrollYProgress,
-    [0.1, 0.9], // Start/End slightly tighter for better visibility
+    [0.2, 1.0], // Shifted +10% (0.1 -> 0.2) to make it 'lag' behind the scroll slightly
     flip 
       ? ["70vw", "-70vw"] // Start right relative to center, cross to left
       : ["-70vw", "70vw"] // Start left relative to center, cross to right
@@ -37,11 +37,11 @@ const CarTransition = ({
   
   const carOpacity = useTransform(
     scrollYProgress,
-    [0, 0.05, 0.95, 1],
+    [0, 0.1, 0.9, 1], // Adjusted for the shift
     [0, 1, 1, 0]
   );
   
-  const carScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
+  const carScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.85, 0.9, 0.85]); // Reduced scale to keep it 'behind' in perspective
 
   // Tilt the car slightly during entrance/exit
   const carRotate = useTransform(
@@ -62,11 +62,11 @@ const CarTransition = ({
   return (
     <div
       ref={ref}
-      className="relative w-full overflow-hidden pointer-events-none"
+      className="relative w-full overflow-visible pointer-events-none"
       style={{
-        height: "280px", // Increased height
+        height: "350px", 
         background: `linear-gradient(180deg, ${fromColor}, ${toColor})`,
-        zIndex: 50, // Improved composition performance
+        zIndex: 50,
         isolation: "isolate",
       }}
     >
@@ -77,7 +77,7 @@ const CarTransition = ({
         <div
           className="absolute left-0 right-0 pointer-events-none opacity-20"
           style={{
-            top: "70%",
+            top: "85%",
             height: "2px",
             backgroundImage: "linear-gradient(90deg, hsl(45 70% 55%) 50%, transparent 50%)",
             backgroundSize: "60px 100%",
@@ -94,10 +94,10 @@ const CarTransition = ({
             rotate: carRotate,
             opacity: carOpacity,
             scale: carScale,
-            top: "20%",
-            zIndex: 10,
-            left: "50%", // Anchor to exact horizontal center
-            translateX: "-50%", // Keep the car itself centered relative to its position
+            top: "5%", 
+            zIndex: 5,
+            left: "50%", 
+            translateX: "-50%", 
           }}
         >
           <div className="relative">
@@ -117,7 +117,7 @@ const CarTransition = ({
               alt="vintage car"
               className="w-56 md:w-80 relative z-20"
               style={{
-                filter: "contrast(1.05) brightness(0.95) drop-shadow(0 15px 25px rgba(0,0,0,0.5))",
+                filter: "drop-shadow(0 15px 25px rgba(0,0,0,0.5))",
                 // Flip the face based on user feedback
                 transform: flip ? "scaleX(1)" : "scaleX(-1)",
               }}
